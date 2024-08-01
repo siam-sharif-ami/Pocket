@@ -66,37 +66,9 @@ class DashboardVC: UIViewController {
         listOfServicesCollectionView.register(nib, forCellWithReuseIdentifier: "listOfServicesCollectionViewCell")
     }
     
-    @IBAction func handleLongPress(_ sender: UILongPressGestureRecognizer) {
-        
-        sender.minimumPressDuration = 1.0
-        guard let senderView = sender.view else {
-            return
-        }
-        UIView.animate(withDuration: 0.5, animations:
-                        {
-            self.showRemoveIcon(view: senderView)
-            senderView.startWiggle()
-        })
-    }
-    
-    func showRemoveIcon(view: UIView){
-        let removeButton = UIButton(type: .custom)
-        removeButton.setImage(UIImage(named: "remove icon"), for: .normal)
-        removeButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(removeButton)
-        
-        NSLayoutConstraint.activate([
-            removeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            removeButton.leadingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            removeButton.widthAnchor.constraint(equalToConstant: 15),
-            removeButton.heightAnchor.constraint(equalToConstant: 15)
-        ])
-        
-    }
     @IBAction func tapGestureToDisableBGView(_ sender: Any) {
         dismissListOfServicesCollectionView()
     }
-    
     
 }
 
@@ -143,22 +115,23 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-            let columns: CGFloat = 4
-            let collectionViewWidth = collectionView.bounds.width
-            let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-            let spaceBetweenCells = flowLayout.minimumInteritemSpacing * (columns - 1)
-            let adjustedWidth = collectionViewWidth - spaceBetweenCells
-            let width: CGFloat = adjustedWidth / columns
-            let height: CGFloat = 90
-            return CGSize(width: width, height: height)
-        }
+        
+        let columns: CGFloat = 4
+        let collectionViewWidth = collectionView.bounds.width
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        let spaceBetweenCells = flowLayout.minimumInteritemSpacing * (columns - 1)
+        let adjustedWidth = collectionViewWidth - spaceBetweenCells
+        let width: CGFloat = adjustedWidth / columns
+        let height: CGFloat = 90
+        return CGSize(width: width, height: height)
+    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.shortcutCollectionView {
             
             selectedShortcutIndex = indexPath
             animateListOfServicesCollectionView()
+            
             
         }else {
             /// listOfServicesCollectionView
@@ -173,7 +146,7 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
                 let selectedShortcut = shortcutCollectionView.cellForItem(at: selectedShortcutIndex) as! shortcutCollectionViewCell
                 selectedShortcut.shortcutImageView.image = UIImage(named: "\(selectedService.icon)")
                 selectedShortcut.shortcutLabel.text = selectedService.title
-
+                
                 updateServicesNotOnShortcut()
                 dismissListOfServicesCollectionView()
             }
@@ -193,10 +166,11 @@ extension DashboardVC {
         listOfServicesCollectionView.reloadData()
         UIView.animate(withDuration: 0.5) {
             
-            self.bgView.backgroundColor = .darkGray
+            self.bgView.backgroundColor = .black
             self.bgView.alpha = 0.3
-            self.listOfServicesCollectionViewHeight.constant = self.view.bounds.height / 2
             self.listOfServicesCollectionView.center.y = self.view.bounds.midY
+            self.listOfServicesCollectionViewHeight.constant = self.view.bounds.height / 2
+            
             
         }
     }

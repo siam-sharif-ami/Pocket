@@ -103,6 +103,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="78" height="60"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </collectionViewCellContentView>
+                                                <gestureRecognizers/>
                                                 <size key="customSize" width="78" height="60"/>
                                             </collectionViewCell>
                                         </cells>
@@ -152,6 +153,12 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -213,26 +220,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="E4L-Lb-KIz" userLabel="Long Press Gesture Recognizer 4">
-                    <connections>
-                        <action selector="handleLongPress:" destination="BYZ-38-t0r" id="fm4-7d-tsh"/>
-                    </connections>
-                </pongPressGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="5cn-71-lHG" userLabel="Long Press Gesture Recognizer 3">
-                    <connections>
-                        <action selector="handleLongPress:" destination="BYZ-38-t0r" id="8jz-9l-XkJ"/>
-                    </connections>
-                </pongPressGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Chz-ga-iu9" userLabel="Long Press Gesture Recognizer 2">
-                    <connections>
-                        <action selector="handleLongPress:" destination="BYZ-38-t0r" id="1ZW-ZU-jYN"/>
-                    </connections>
-                </pongPressGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="80h-Kw-DLD" userLabel="Long Press Gesture Recognizer 1">
-                    <connections>
-                        <action selector="handleLongPress:" destination="BYZ-38-t0r" id="h8g-zE-bDx"/>
-                    </connections>
-                </pongPressGestureRecognizer>
                 <tapGestureRecognizer id="Gvm-pa-VNM">
                     <connections>
                         <action selector="tapGestureToDisableBGView:" destination="BYZ-38-t0r" id="A1v-mv-4pM"/>
@@ -361,7 +348,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
