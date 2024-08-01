@@ -16,6 +16,14 @@
 		7A2E2CA52C576998004C6B30 /* PocketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E2CA42C576998004C6B30 /* PocketTests.swift */; };
 		7A2E2CAF2C576998004C6B30 /* PocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E2CAE2C576998004C6B30 /* PocketUITests.swift */; };
 		7A2E2CB12C576998004C6B30 /* PocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E2CB02C576998004C6B30 /* PocketUITestsLaunchTests.swift */; };
+		7A2E2CC02C576CC9004C6B30 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E2CBF2C576CC9004C6B30 /* DashboardVC.swift */; };
+		7A2E2CC32C577037004C6B30 /* ShortCutIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E2CC22C577037004C6B30 /* ShortCutIcon.swift */; };
+		7A2E2CC52C5790EB004C6B30 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E2CC42C5790EB004C6B30 /* Service.swift */; };
+		7A85D1532C5A07E30041CF04 /* shortcutCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A85D1522C5A07E30041CF04 /* shortcutCollectionViewCell.xib */; };
+		7A85D1542C5A07E30041CF04 /* shortcutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A85D1512C5A07E30041CF04 /* shortcutCollectionViewCell.swift */; };
+		7AC0A5B22C58E20200B6D97E /* listOfServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0A5B02C58E20200B6D97E /* listOfServicesCollectionViewCell.swift */; };
+		7AC0A5B32C58E20200B6D97E /* listOfServicesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0A5B12C58E20200B6D97E /* listOfServicesCollectionViewCell.xib */; };
+		7AC0A5B52C590B8400B6D97E /* ServiceSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0A5B42C590B8400B6D97E /* ServiceSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		7A2E2CAA2C576998004C6B30 /* PocketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2E2CAE2C576998004C6B30 /* PocketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketUITests.swift; sourceTree = "<group>"; };
 		7A2E2CB02C576998004C6B30 /* PocketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7A2E2CBF2C576CC9004C6B30 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		7A2E2CC22C577037004C6B30 /* ShortCutIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortCutIcon.swift; sourceTree = "<group>"; };
+		7A2E2CC42C5790EB004C6B30 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		7A85D1512C5A07E30041CF04 /* shortcutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shortcutCollectionViewCell.swift; sourceTree = "<group>"; };
+		7A85D1522C5A07E30041CF04 /* shortcutCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = shortcutCollectionViewCell.xib; sourceTree = "<group>"; };
+		7AC0A5B02C58E20200B6D97E /* listOfServicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listOfServicesCollectionViewCell.swift; sourceTree = "<group>"; };
+		7AC0A5B12C58E20200B6D97E /* listOfServicesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = listOfServicesCollectionViewCell.xib; sourceTree = "<group>"; };
+		7AC0A5B42C590B8400B6D97E /* ServiceSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,9 @@
 		7A2E2C8C2C576997004C6B30 /* Pocket */ = {
 			isa = PBXGroup;
 			children = (
+				7AC0A5AE2C58E1C100B6D97E /* xib */,
+				7A2E2CC12C577029004C6B30 /* Model */,
+				7A2E2CBD2C576C8E004C6B30 /* Scenes */,
 				7A2E2C8D2C576997004C6B30 /* AppDelegate.swift */,
 				7A2E2C8F2C576997004C6B30 /* SceneDelegate.swift */,
 				7A2E2C912C576997004C6B30 /* ViewController.swift */,
@@ -125,6 +144,59 @@
 				7A2E2CB02C576998004C6B30 /* PocketUITestsLaunchTests.swift */,
 			);
 			path = PocketUITests;
+			sourceTree = "<group>";
+		};
+		7A2E2CBD2C576C8E004C6B30 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7A2E2CBE2C576C95004C6B30 /* Dashboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		7A2E2CBE2C576C95004C6B30 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				7A2E2CBF2C576CC9004C6B30 /* DashboardVC.swift */,
+				7AC0A5B42C590B8400B6D97E /* ServiceSelectionViewController.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		7A2E2CC12C577029004C6B30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7A2E2CC22C577037004C6B30 /* ShortCutIcon.swift */,
+				7A2E2CC42C5790EB004C6B30 /* Service.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A85D1502C5A07B50041CF04 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		7AC0A5AE2C58E1C100B6D97E /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				7A85D1502C5A07B50041CF04 /* New Group */,
+				7AC0A5AF2C58E1C800B6D97E /* DashboardServiceCollectionView */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		7AC0A5AF2C58E1C800B6D97E /* DashboardServiceCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				7AC0A5B02C58E20200B6D97E /* listOfServicesCollectionViewCell.swift */,
+				7AC0A5B12C58E20200B6D97E /* listOfServicesCollectionViewCell.xib */,
+				7A85D1512C5A07E30041CF04 /* shortcutCollectionViewCell.swift */,
+				7A85D1522C5A07E30041CF04 /* shortcutCollectionViewCell.xib */,
+			);
+			path = DashboardServiceCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +304,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A2E2C972C576998004C6B30 /* Assets.xcassets in Resources */,
+				7A85D1532C5A07E30041CF04 /* shortcutCollectionViewCell.xib in Resources */,
+				7AC0A5B32C58E20200B6D97E /* listOfServicesCollectionViewCell.xib in Resources */,
 				7A2E2C9A2C576998004C6B30 /* Base in Resources */,
 				7A2E2C952C576997004C6B30 /* Base in Resources */,
 			);
@@ -259,8 +333,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A2E2C922C576997004C6B30 /* ViewController.swift in Sources */,
+				7A2E2CC52C5790EB004C6B30 /* Service.swift in Sources */,
+				7A2E2CC32C577037004C6B30 /* ShortCutIcon.swift in Sources */,
+				7A2E2CC02C576CC9004C6B30 /* DashboardVC.swift in Sources */,
 				7A2E2C8E2C576997004C6B30 /* AppDelegate.swift in Sources */,
+				7A85D1542C5A07E30041CF04 /* shortcutCollectionViewCell.swift in Sources */,
+				7AC0A5B52C590B8400B6D97E /* ServiceSelectionViewController.swift in Sources */,
 				7A2E2C902C576997004C6B30 /* SceneDelegate.swift in Sources */,
+				7AC0A5B22C58E20200B6D97E /* listOfServicesCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

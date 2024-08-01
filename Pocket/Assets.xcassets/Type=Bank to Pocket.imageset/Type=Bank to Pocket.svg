@@ -1,0 +1,16 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="13" height="22" rx="2" transform="matrix(-1 0 0 1 36 16)" fill="#1B3F1E" fill-opacity="0.1"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M34 16C35.1046 16 36 16.8954 36 18V36C36 37.1046 35.1046 38 34 38H25C23.8954 38 23 37.1046 23 36V18C23 16.8954 23.8954 16 25 16H34ZM33 18C33.5523 18 34 18.4477 34 19V35C34 35.5523 33.5523 36 33 36H26C25.4477 36 25 35.5523 25 35V19C25 18.4477 25.4477 18 26 18H33Z" fill="#3DAE72"/>
+<rect width="4" height="1.5" rx="0.75" transform="matrix(-1 0 0 1 31.5 19)" fill="#1B3F1E"/>
+<rect width="15" height="10" transform="matrix(-1 0 0 1 19 9)" fill="#1B3F1E" fill-opacity="0.1"/>
+<path d="M20 7L11.5 3L3 7V9H20V7Z" fill="#1B3F1E"/>
+<rect width="2" height="9" transform="matrix(-1 0 0 1 19 10)" fill="#3DAE72"/>
+<rect width="2" height="9" transform="matrix(-1 0 0 1 15 10)" fill="#3DAE72"/>
+<rect width="2" height="9" transform="matrix(-1 0 0 1 6 10)" fill="#3DAE72"/>
+<rect width="2" height="9" transform="matrix(-1 0 0 1 10 10)" fill="#3DAE72"/>
+<rect width="17" height="3" transform="matrix(-1 0 0 1 20 20)" fill="#3DAE72"/>
+<rect width="6" height="6" rx="3" transform="matrix(-1 0 0 1 14.5 3)" fill="#D7BD7C"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.9 5.42857H10.6V6H10.9V7.14286H10.9106C10.9834 7.62747 11.421 8 11.95 8C12.5299 8 13 7.55228 13 7C13 6.84663 12.9637 6.70132 12.899 6.57143L11.9509 6.57143C12.199 6.57187 12.4 6.76358 12.4 7C12.4 7.23669 12.1985 7.42857 11.95 7.42857C11.7015 7.42857 11.5 7.23669 11.5 7L11.5 6.85714L11.5 6.09623L11.5 6H12.7V5.42857H11.5V4.71429C11.5 4.3198 11.1642 4 10.75 4C10.3358 4 10 4.3198 10 4.71429L10 4.71717V4.85714H10.6V4.71429C10.6 4.63539 10.6671 4.57143 10.75 4.57143C10.8328 4.57143 10.9 4.63539 10.9 4.71429L10.9 5.42857Z" fill="#1B3F1E"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M28.5 26.5H28V27.5H28.5V29.5H28.5177C28.639 30.3481 29.3684 31 30.25 31C31.2165 31 32 30.2165 32 29.25C32 28.9816 31.9396 28.7273 31.8316 28.5L30.2515 28.5C30.665 28.5008 31 28.8363 31 29.25C31 29.6642 30.6642 30 30.25 30C29.8358 30 29.5 29.6642 29.5 29.25L29.5 29L29.5 27.6684L29.5 27.5H31.5V26.5H29.5V25.25C29.5 24.5596 28.9403 24 28.25 24C27.5596 24 27 24.5596 27 25.25L27 25.255V25.5H28V25.25C28 25.1119 28.1119 25 28.25 25C28.388 25 28.5 25.1119 28.5 25.25L28.5 26.5Z" fill="#1B3F1E"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M21 36.5L15 40L15 38L7 38L7 35L7 25L10 25L10 35L15 35L15 33L21 36.5Z" fill="#1B3F1E"/>
+</svg>
