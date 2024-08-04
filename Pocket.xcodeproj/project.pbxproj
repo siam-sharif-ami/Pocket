@@ -24,6 +24,8 @@
 		7AC0A5B22C58E20200B6D97E /* listOfServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0A5B02C58E20200B6D97E /* listOfServicesCollectionViewCell.swift */; };
 		7AC0A5B32C58E20200B6D97E /* listOfServicesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0A5B12C58E20200B6D97E /* listOfServicesCollectionViewCell.xib */; };
 		7AC0A5B52C590B8400B6D97E /* ServiceSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0A5B42C590B8400B6D97E /* ServiceSelectionViewController.swift */; };
+		7AC6B2902C5F9A0E0089620A /* DashboardVC+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6B28F2C5F9A0E0089620A /* DashboardVC+Delegate.swift */; };
+		7AC6B2922C5F9A1D0089620A /* DashboardVC+Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6B2912C5F9A1D0089620A /* DashboardVC+Datasource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		7AC0A5B02C58E20200B6D97E /* listOfServicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listOfServicesCollectionViewCell.swift; sourceTree = "<group>"; };
 		7AC0A5B12C58E20200B6D97E /* listOfServicesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = listOfServicesCollectionViewCell.xib; sourceTree = "<group>"; };
 		7AC0A5B42C590B8400B6D97E /* ServiceSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSelectionViewController.swift; sourceTree = "<group>"; };
+		7AC6B28F2C5F9A0E0089620A /* DashboardVC+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardVC+Delegate.swift"; sourceTree = "<group>"; };
+		7AC6B2912C5F9A1D0089620A /* DashboardVC+Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardVC+Datasource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 		7A2E2CBD2C576C8E004C6B30 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7AC6B2932C5F9A250089620A /* Selection */,
 				7A2E2CBE2C576C95004C6B30 /* Dashboard */,
 			);
 			path = Scenes;
@@ -158,7 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				7A2E2CBF2C576CC9004C6B30 /* DashboardVC.swift */,
-				7AC0A5B42C590B8400B6D97E /* ServiceSelectionViewController.swift */,
+				7AC6B2912C5F9A1D0089620A /* DashboardVC+Datasource.swift */,
+				7AC6B28F2C5F9A0E0089620A /* DashboardVC+Delegate.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -197,6 +203,14 @@
 				7A85D1522C5A07E30041CF04 /* shortcutCollectionViewCell.xib */,
 			);
 			path = DashboardServiceCollectionView;
+			sourceTree = "<group>";
+		};
+		7AC6B2932C5F9A250089620A /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				7AC0A5B42C590B8400B6D97E /* ServiceSelectionViewController.swift */,
+			);
+			path = Selection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,11 +347,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A2E2C922C576997004C6B30 /* ViewController.swift in Sources */,
+				7AC6B2922C5F9A1D0089620A /* DashboardVC+Datasource.swift in Sources */,
 				7A2E2CC52C5790EB004C6B30 /* Service.swift in Sources */,
 				7A2E2CC32C577037004C6B30 /* ShortCutIcon.swift in Sources */,
 				7A2E2CC02C576CC9004C6B30 /* DashboardVC.swift in Sources */,
 				7A2E2C8E2C576997004C6B30 /* AppDelegate.swift in Sources */,
 				7A85D1542C5A07E30041CF04 /* shortcutCollectionViewCell.swift in Sources */,
+				7AC6B2902C5F9A0E0089620A /* DashboardVC+Delegate.swift in Sources */,
 				7AC0A5B52C590B8400B6D97E /* ServiceSelectionViewController.swift in Sources */,
 				7A2E2C902C576997004C6B30 /* SceneDelegate.swift in Sources */,
 				7AC0A5B22C58E20200B6D97E /* listOfServicesCollectionViewCell.swift in Sources */,
