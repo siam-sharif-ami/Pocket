@@ -23,6 +23,8 @@ class ServiceSelectionViewController: UIViewController {
     
     @IBOutlet weak var listOfServicesCollectionViewHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var listOfServicesCellSuperView: UIView!
+    
     @IBOutlet weak var bgView: UIView!
     
     @IBOutlet weak var label: UILabel!
@@ -43,6 +45,7 @@ class ServiceSelectionViewController: UIViewController {
         let nib = UINib(nibName: "listOfServicesCollectionViewCell", bundle: nil)
         listOfServicesCollectionView.register(nib, forCellWithReuseIdentifier: "listOfServicesCollectionViewCell")
     }
+    
     @IBAction func animateCollectionView(_ sender: Any) {
         
         listOfServicesCollectionView.reloadData()

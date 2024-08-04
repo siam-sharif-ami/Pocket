@@ -252,7 +252,6 @@
                                         <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title=""/>
                                         <connections>
                                             <action selector="animateCollectionView:" destination="fcO-QM-9hu" eventType="touchUpInside" id="n2e-Ni-CZF"/>
-                                            <outletCollection property="gestureRecognizers" destination="vcr-pS-upC" appends="YES" id="U5T-jM-FgU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -290,6 +289,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <gestureRecognizers/>
                                     </collectionViewCell>
                                 </cells>
                                 <userDefinedRuntimeAttributes>
@@ -327,11 +327,6 @@
                         <action selector="onTapDismissCollectionView:" destination="fcO-QM-9hu" id="PyI-lr-nMl"/>
                     </connections>
                 </tapGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="vcr-pS-upC">
-                    <connections>
-                        <action selector="onLongPressRemoveAction:" destination="fcO-QM-9hu" id="Nk0-OM-c6W"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="672.51908396946567" y="-13.380281690140846"/>
         </scene>

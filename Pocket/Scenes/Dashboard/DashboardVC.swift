@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 
-
 class DashboardVC: UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -35,10 +34,8 @@ class DashboardVC: UIViewController {
     var servicesNotOnShortcut: [Service] = []
     var selectedShortcutIndex: IndexPath?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         backgroundImage.image = UIImage(named: "Full Screen")
         updateServicesNotOnShortcut()
@@ -46,8 +43,17 @@ class DashboardVC: UIViewController {
         self.listOfServicesCollectionViewHeight.constant = 0
         self.listOfServicesCollectionView.center.y = self.view.bounds.maxY
         setUplistOfServicesCollectionView()
+        setUpGestureOnShortCut()
+       
+    }
+    
+    func setUpGestureOnShortCut(){
+        let longPressGestureOnShortcutCollectionView = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressOnShortcutCollectionView(_:)))
+        longPressGestureOnShortcutCollectionView.minimumPressDuration = 1.0
+        shortcutCollectionView.addGestureRecognizer(longPressGestureOnShortcutCollectionView)
         
     }
+    
     func setupShortcutCollectionView(){
         
         shortcutCollectionView.delegate = self
@@ -65,8 +71,38 @@ class DashboardVC: UIViewController {
         let nib = UINib(nibName: "listOfServicesCollectionViewCell", bundle: nil)
         listOfServicesCollectionView.register(nib, forCellWithReuseIdentifier: "listOfServicesCollectionViewCell")
     }
+    @objc func handleLongPressOnShortcutCollectionView(_ sender: UILongPressGestureRecognizer){
+        
+        if sender.state == .began {
+            let location = sender.location(in: shortcutCollectionView)
+            if let indexPath = shortcutCollectionView.indexPathForItem(at: location){
+                let cellAtIndexPath = shortcutCollectionView.cellForItem(at: indexPath) as! shortcutCollectionViewCell
+                if cellAtIndexPath.shortcutLabel.text != "Shortcut" {
+                    cellAtIndexPath.removeButton.isHidden = false
+                    
+                    UIView.animate(withDuration: 0.3) {
+                        cellAtIndexPath.removeButton.addAction(UIAction(handler: { _ in
+                            
+                            /// update on servicesOnShortcut model
+                            servicesOnShortcut[indexPath.row].title = "Shortcut"
+                            ///
+                            
+                            cellAtIndexPath.shortcutLabel.text = "Shortcut"
+                            cellAtIndexPath.shortcutImageView.image = nil
+                            cellAtIndexPath.shortcutPlusImage.isHidden = false
+                            self.updateServicesNotOnShortcut()
+                            self.listOfServicesCollectionView.reloadData()
+                            cellAtIndexPath.removeButton.isHidden = true
+                        }), for: .touchUpInside)
+                    }
+                    
+                }
+            }
+        }
+    }
     
     @IBAction func tapGestureToDisableBGView(_ sender: Any) {
+        
         dismissListOfServicesCollectionView()
     }
     
@@ -101,8 +137,9 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.shortcutCollectionView{
             let cell = shortcutCollectionView.dequeueReusableCell(withReuseIdentifier: "shortcutCollectionViewCell", for: indexPath) as! shortcutCollectionViewCell
-            cell.shortcutLabel.text = servicesOnShortcut[indexPath.row].title
             cell.shortcutImageView.image = UIImage(named: "\(servicesOnShortcut[indexPath.row].icon)")
+            cell.shortcutLabel.text = servicesOnShortcut[indexPath.row].title
+            cell.removeButton.isHidden = true
             return cell
         }else  {
             /// listOfServicesCollectionView
@@ -130,7 +167,10 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         if collectionView == self.shortcutCollectionView {
             
             selectedShortcutIndex = indexPath
-            animateListOfServicesCollectionView()
+            let cell = shortcutCollectionView.cellForItem(at: indexPath) as! shortcutCollectionViewCell
+            if cell.removeButton.isHidden == true {
+                animateListOfServicesCollectionView()
+            }
             
             
         }else {
@@ -139,13 +179,15 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
             if let selectedShortcutIndex  = self.selectedShortcutIndex {
                 let selectedService = servicesNotOnShortcut[indexPath.row]
                 
-                // update servicesOnShortcut
+                // update servicesOnShortcut Model
                 servicesOnShortcut[selectedShortcutIndex.row] = selectedService
+                //
                 
                 // update the cell on shortcut
                 let selectedShortcut = shortcutCollectionView.cellForItem(at: selectedShortcutIndex) as! shortcutCollectionViewCell
                 selectedShortcut.shortcutImageView.image = UIImage(named: "\(selectedService.icon)")
                 selectedShortcut.shortcutLabel.text = selectedService.title
+                selectedShortcut.shortcutPlusImage.isHidden = true
                 
                 updateServicesNotOnShortcut()
                 dismissListOfServicesCollectionView()
@@ -168,6 +210,7 @@ extension DashboardVC {
             
             self.bgView.backgroundColor = .black
             self.bgView.alpha = 0.3
+            print("Total height: \(self.view.bounds.height), midPoint: \(self.view.bounds.midY)")
             self.listOfServicesCollectionView.center.y = self.view.bounds.midY
             self.listOfServicesCollectionViewHeight.constant = self.view.bounds.height / 2
             
