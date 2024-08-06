@@ -31,6 +31,9 @@ class DashboardVC: UIViewController {
     
     @IBOutlet weak var shortcutCollectionView: UICollectionView!
     
+    @IBOutlet weak var transactionTableView: UITableView!
+    
+    
     var servicesNotOnShortcut: [Service] = []
     var selectedShortcutIndex: IndexPath?
     
@@ -44,6 +47,7 @@ class DashboardVC: UIViewController {
         self.listOfServicesCollectionView.center.y = self.view.bounds.maxY
         setUplistOfServicesCollectionView()
         setUpGestureOnShortCut()
+        setUpTransactionTableView()
        
     }
     
@@ -70,6 +74,14 @@ class DashboardVC: UIViewController {
         listOfServicesCollectionView.dataSource = self
         let nib = UINib(nibName: "listOfServicesCollectionViewCell", bundle: nil)
         listOfServicesCollectionView.register(nib, forCellWithReuseIdentifier: "listOfServicesCollectionViewCell")
+    }
+    
+    func setUpTransactionTableView(){
+        transactionTableView.delegate = self
+        transactionTableView.dataSource = self
+        
+        let nib = UINib(nibName: "transactionsTableViewCell", bundle: nil)
+        transactionTableView.register(nib, forCellReuseIdentifier: "transactionsTableViewCell")
     }
     
     @objc func handleLongPressOnShortcutCollectionView(_ sender: UILongPressGestureRecognizer){
