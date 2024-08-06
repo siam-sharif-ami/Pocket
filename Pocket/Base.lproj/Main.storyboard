@@ -87,7 +87,7 @@
                                 <rect key="frame" x="30" y="223.66666666666663" width="333" height="118"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hX4-Qa-Ums">
-                                        <rect key="frame" x="20" y="10" width="293" height="98"/>
+                                        <rect key="frame" x="15" y="10" width="303" height="98"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Uft-bF-UWt">
                                             <size key="itemSize" width="78" height="60"/>
@@ -111,8 +111,8 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="hX4-Qa-Ums" secondAttribute="trailing" constant="20" id="KPq-uc-gt1"/>
-                                    <constraint firstItem="hX4-Qa-Ums" firstAttribute="leading" secondItem="Wg4-V8-XZP" secondAttribute="leading" constant="20" id="W4l-Jb-aKG"/>
+                                    <constraint firstAttribute="trailing" secondItem="hX4-Qa-Ums" secondAttribute="trailing" constant="15" id="KPq-uc-gt1"/>
+                                    <constraint firstItem="hX4-Qa-Ums" firstAttribute="leading" secondItem="Wg4-V8-XZP" secondAttribute="leading" constant="15" id="W4l-Jb-aKG"/>
                                     <constraint firstItem="hX4-Qa-Ums" firstAttribute="top" secondItem="Wg4-V8-XZP" secondAttribute="top" constant="10" id="ZPt-wZ-rQI"/>
                                     <constraint firstAttribute="bottom" secondItem="hX4-Qa-Ums" secondAttribute="bottom" constant="10" id="fzC-X8-7Jw"/>
                                     <constraint firstAttribute="height" constant="118" id="vNi-OX-m3V"/>

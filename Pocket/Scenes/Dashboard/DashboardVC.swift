@@ -145,7 +145,7 @@ extension DashboardVC {
             self.bgView.alpha = 0.3
             print("Total height: \(self.view.bounds.height), midPoint: \(self.view.bounds.midY)")
             self.listOfServicesCollectionView.center.y = self.view.bounds.midY
-            self.listOfServicesCollectionViewHeight.constant = self.view.bounds.height / 2
+            self.listOfServicesCollectionViewHeight.constant = self.view.bounds.height / 1.75
             
             
         }

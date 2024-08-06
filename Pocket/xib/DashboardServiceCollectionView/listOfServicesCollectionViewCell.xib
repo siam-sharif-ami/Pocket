@@ -17,9 +17,9 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u8B-jM-eRF">
-                        <rect key="frame" x="20" y="79" width="242" height="101"/>
+                        <rect key="frame" x="20" y="79" width="242" height="111"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRa-OU-LQf">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRa-OU-LQf">
                         <rect key="frame" x="123.33333333333333" y="200" width="35.333333333333329" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
@@ -33,7 +33,7 @@
                 <constraint firstItem="u8B-jM-eRF" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="WMh-Hk-JeJ"/>
                 <constraint firstItem="u8B-jM-eRF" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="20" id="dg4-J3-u55"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="u8B-jM-eRF" secondAttribute="trailing" constant="20" id="j2M-9S-FR0"/>
-                <constraint firstItem="GRa-OU-LQf" firstAttribute="top" secondItem="u8B-jM-eRF" secondAttribute="bottom" constant="20" id="vEA-RC-1Tz"/>
+                <constraint firstItem="GRa-OU-LQf" firstAttribute="top" secondItem="u8B-jM-eRF" secondAttribute="bottom" constant="10" id="vEA-RC-1Tz"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="GRa-OU-LQf" secondAttribute="bottom" constant="10" id="xWe-dR-dZS"/>
             </constraints>
             <size key="customSize" width="282" height="261"/>
