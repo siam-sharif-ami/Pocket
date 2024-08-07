@@ -7,8 +7,6 @@
 
 import Foundation
 import UIKit
-
-
 class DashboardVC: UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -25,6 +23,8 @@ class DashboardVC: UIViewController {
     @IBOutlet weak var homeTopIcon1: UIImageView!
     @IBOutlet weak var shortcutSuperView: UIView!
     
+    @IBOutlet weak var sideMenuTableViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var sideMenuTableView: UITableView!
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var listOfServicesCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var listOfServicesCollectionView: UICollectionView!
@@ -37,18 +37,40 @@ class DashboardVC: UIViewController {
     var servicesNotOnShortcut: [Service] = []
     var selectedShortcutIndex: IndexPath?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         backgroundImage.image = UIImage(named: "Full Screen")
         updateServicesNotOnShortcut()
         setupShortcutCollectionView()
+        self.bgView.isHidden = true
         self.listOfServicesCollectionViewHeight.constant = 0
         self.listOfServicesCollectionView.center.y = self.view.bounds.maxY
         setUplistOfServicesCollectionView()
         setUpGestureOnShortCut()
         setUpTransactionTableView()
-       
+        setUpSideMenuTableView()
+        setUpTapGestureForSideMenu()
+    }
+    
+    func setUpSideMenuTableView() {
+        sideMenuTableView.delegate = self
+        sideMenuTableView.dataSource = self
+        
+        sideMenuTableView.isHidden = true
+        sideMenuTableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsTableViewCell")
+        sideMenuTableView.center.x -= self.view.bounds.width
+        sideMenuTableViewWidthConstraint.constant = 0
+    }
+    
+    func setUpTapGestureForSideMenu() {
+        let tapGestureOnAccountImage = UITapGestureRecognizer(target: self, action: #selector(tapGestureForSideMenuHandler(_:)))
+        accountName.addGestureRecognizer(tapGestureOnAccountImage)
+    }
+    
+    @objc func tapGestureForSideMenuHandler(_ sender: Any ){
+        animateSideMenuTableView()
     }
     
     func setUpGestureOnShortCut(){
@@ -115,7 +137,8 @@ class DashboardVC: UIViewController {
     }
     
     @IBAction func tapGestureToDisableBGView(_ sender: Any) {
-        
+        print("tap on bgView")
+        dismissSideMenuTableView()
         dismissListOfServicesCollectionView()
     }
     
@@ -141,6 +164,7 @@ extension DashboardVC {
         listOfServicesCollectionView.reloadData()
         UIView.animate(withDuration: 0.5) {
             
+            self.bgView.isHidden = false
             self.bgView.backgroundColor = .black
             self.bgView.alpha = 0.3
             print("Total height: \(self.view.bounds.height), midPoint: \(self.view.bounds.midY)")
@@ -150,10 +174,37 @@ extension DashboardVC {
             
         }
     }
+    func animateSideMenuTableView(){
+        UIView.animate(withDuration: 0.4) {
+            
+            self.bgView.isHidden = false
+            self.bgView.backgroundColor = .black
+            self.bgView.alpha = 0.3
+            
+            self.sideMenuTableView.isHidden = false
+            // change the animation
+            self.sideMenuTableView.center.x = self.view.center.x
+            //
+            self.sideMenuTableViewWidthConstraint.constant = self.view.bounds.width / 1.25
+            
+            print("side menu center = \(self.sideMenuTableView.center.x) and width = \(self.sideMenuTableViewWidthConstraint.constant)")
+        }
+    }
+    func dismissSideMenuTableView(){
+        UIView.animate(withDuration: 0.3) {
+            
+            self.sideMenuTableView.center.x -= self.view.bounds.width
+            self.sideMenuTableViewWidthConstraint.constant = 0
+            self.bgView.alpha = 0
+            self.bgView.isHidden = true
+            self.sideMenuTableView.isHidden = true
+        }
+    }
     func dismissListOfServicesCollectionView(){
         UIView.animate(withDuration: 0.5) {
             
             self.bgView.alpha = 0
+            self.bgView.isHidden = true
             self.listOfServicesCollectionView.center.y = self.view.bounds.maxY
             self.listOfServicesCollectionViewHeight.constant = 0
         }

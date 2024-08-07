@@ -37,12 +37,14 @@ extension DashboardVC: UICollectionViewDataSource, UICollectionViewDelegateFlowL
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-//        let columns: CGFloat = 4
-//        let collectionViewWidth = collectionView.bounds.width
-//        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-//        let spaceBetweenCells = flowLayout.minimumInteritemSpacing * (columns - 1)
-//        let adjustedWidth = collectionViewWidth - spaceBetweenCells
-        let width: CGFloat = 65 /*adjustedWidth / columns*/
+        //        let columns: CGFloat = 4
+        //        let collectionViewWidth = collectionView.bounds.width
+        //        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        //        let spaceBetweenCells = flowLayout.minimumInteritemSpacing * (columns - 1)
+        //        let adjustedWidth = collectionViewWidth - spaceBetweenCells
+        /* let width: CGFloat = 65*/ /*adjustedWidth / columns*/
+        let width = collectionView.bounds.width / 4.75
+        print(width)
         let height: CGFloat = 90
         return CGSize(width: width, height: height)
     }
@@ -52,42 +54,130 @@ extension DashboardVC: UICollectionViewDataSource, UICollectionViewDelegateFlowL
         if collectionView == self.listOfServicesCollectionView {
             return UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
         }else {
-            return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
     }
 }
 
 extension DashboardVC: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        switch (tableView){
+        case self.sideMenuTableView:
+            sideMenuSections.count
+        case self.transactionTableView:
+            1
+        default:
+            0
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        transactionsOnTableView.count
+        switch(tableView){
+        case self.transactionTableView:
+            transactionsOnTableView.count
+        case self.sideMenuTableView:
+            
+            switch(section){
+            case 0:
+                sideMenuSections[0]["Settings"]!.count
+            case 1:
+                sideMenuSections[1]["Account Service"]!.count
+            case 2:
+                sideMenuSections[2]["Support"]!.count
+            default:
+                0
+            }
+        default:
+            0
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = transactionTableView.dequeueReusableCell(withIdentifier: "transactionsTableViewCell",  for: indexPath) as! transactionsTableViewCell
-        cell.icon.image = UIImage(named: transactionsOnTableView[indexPath.row].icon)
-        cell.transactionTitle.text = transactionsOnTableView[indexPath.row].title
-        cell.transactionTitle.numberOfLines = 0
-        cell.amount.text = transactionsOnTableView[indexPath.row].amount.description
-        
-        cell.date.text = transactionsOnTableView[indexPath.row].date
-        let type = transactionsOnTableView[indexPath.row].type
-        if type == "debit" {
-            cell.takaIcon.image = UIImage(named: "taka")?.withTintColor(.red)
-            cell.amount.textColor = .red
-            cell.minusOrPlus.textColor = .red
-        }else {
-            cell.takaIcon.image = UIImage(named: "taka")?.withTintColor(.systemGreen)
-            cell.amount.textColor = .systemGreen
-            cell.minusOrPlus.textColor = .systemGreen
+        switch(tableView){
+            
+        case self.sideMenuTableView:
+            
+            if indexPath.section == 0 {
+                let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as! SettingsTableViewCell
+                let sectionData = sideMenuSections[0]["Settings"]!
+                cell.icon.image = UIImage(named: sectionData[indexPath.row].icon)
+                cell.title.text = sectionData[indexPath.row].Title
+                return cell
+            }else if indexPath.section == 1 {
+                let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as! SettingsTableViewCell
+                let sectionData = sideMenuSections[1]["Account Service"]!
+                cell.icon.image = UIImage(named: sectionData[indexPath.row].icon)
+                cell.title.text = sectionData[indexPath.row].Title
+                return cell
+            }else  {
+                let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as! SettingsTableViewCell
+                let sectionData = sideMenuSections[2]["Support"]!
+                cell.icon.image = UIImage(named: sectionData[indexPath.row].icon)
+                cell.title.text = sectionData[indexPath.row].Title
+                return cell
+            }
+            
+        case self.transactionTableView:
+            let cell = transactionTableView.dequeueReusableCell(withIdentifier: "transactionsTableViewCell",  for: indexPath) as! transactionsTableViewCell
+            cell.icon.image = UIImage(named: transactionsOnTableView[indexPath.row].icon)
+            cell.transactionTitle.text = transactionsOnTableView[indexPath.row].title
+            cell.transactionTitle.numberOfLines = 0
+            cell.amount.text = transactionsOnTableView[indexPath.row].amount.description
+            
+            cell.date.text = transactionsOnTableView[indexPath.row].date
+            let type = transactionsOnTableView[indexPath.row].type
+            if type == "debit" {
+                cell.takaIcon.image = UIImage(named: "taka")?.withTintColor(.red)
+                cell.amount.textColor = .red
+                cell.minusOrPlus.textColor = .red
+            }else {
+                cell.takaIcon.image = UIImage(named: "taka")?.withTintColor(.systemGreen)
+                cell.amount.textColor = .systemGreen
+                cell.minusOrPlus.textColor = .systemGreen
+            }
+            return cell
+            
+        default:
+            let defaultCell = UITableViewCell(style: .default, reuseIdentifier: "defaultCell")
+            defaultCell.textLabel?.text = "Default Cell"
+            return defaultCell
+            
         }
-        return cell
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Transactions"
+        switch(tableView){
+        case self.transactionTableView:
+            return "Transactions"
+        case self.sideMenuTableView:
+            switch(section){
+            case 0:
+                return "Settings"
+            case 1:
+                return "Account Service"
+            case 2:
+                return "Support"
+            default:
+                return "Default"
+            }
+        default:
+            return "Default"
+        }
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        10
+        switch(tableView){
+        case self.transactionTableView:
+            10
+        default:
+            10
+        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        60
+        switch(tableView){
+        case self.transactionTableView:
+            60
+        case self.sideMenuTableView:
+            50
+        default:
+            0
+        }
     }
 }

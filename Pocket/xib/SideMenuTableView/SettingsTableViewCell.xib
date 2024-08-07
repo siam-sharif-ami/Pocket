@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="KGk-i7-Jjw" customClass="SettingsTableViewCell" customModule="Pocket" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="322" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="322" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Type=My QR" translatesAutoresizingMaskIntoConstraints="NO" id="ybV-ds-V8f">
+                        <rect key="frame" x="20" y="15" width="30" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="dYJ-vE-HL3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My QR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDb-BH-fVP">
+                        <rect key="frame" x="65" y="26.666666666666671" width="43" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Right Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Feu-NC-Dic">
+                        <rect key="frame" x="285" y="25" width="17" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="OoU-2K-asp"/>
+                            <constraint firstAttribute="width" constant="17" id="war-5l-saC"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ybV-ds-V8f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Fvx-Un-Y66"/>
+                    <constraint firstItem="LDb-BH-fVP" firstAttribute="centerY" secondItem="ybV-ds-V8f" secondAttribute="centerY" id="Fyw-9x-Edx"/>
+                    <constraint firstAttribute="trailing" secondItem="Feu-NC-Dic" secondAttribute="trailing" constant="20" symbolic="YES" id="Gsp-EQ-Yb8"/>
+                    <constraint firstItem="Feu-NC-Dic" firstAttribute="centerY" secondItem="ybV-ds-V8f" secondAttribute="centerY" id="Mvx-Bt-VLG"/>
+                    <constraint firstItem="ybV-ds-V8f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="bqp-QF-vUE"/>
+                    <constraint firstItem="LDb-BH-fVP" firstAttribute="leading" secondItem="ybV-ds-V8f" secondAttribute="trailing" constant="15" id="kWe-lR-Thb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <constraints>
+                <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="ybV-ds-V8f" secondAttribute="bottom" constant="15" id="d3l-jz-nU6"/>
+            </constraints>
+            <connections>
+                <outlet property="icon" destination="ybV-ds-V8f" id="gJe-De-lT4"/>
+                <outlet property="rightArrow" destination="Feu-NC-Dic" id="GL5-qf-UZR"/>
+                <outlet property="title" destination="LDb-BH-fVP" id="Crl-r0-o5k"/>
+            </connections>
+            <point key="canvasLocation" x="134.35114503816794" y="-14.788732394366198"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Right Arrow" width="8" height="14"/>
+        <image name="Type=My QR" width="40" height="40"/>
+    </resources>
+</document>
