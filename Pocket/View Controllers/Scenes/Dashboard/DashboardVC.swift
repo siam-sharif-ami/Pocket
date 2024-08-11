@@ -34,15 +34,14 @@ class DashboardVC: UIViewController {
     @IBOutlet weak var transactionTableView: UITableView!
     
     
-    var servicesNotOnShortcut: [Service] = []
-    var selectedShortcutIndex: IndexPath?
     
+    let viewModel = DashboardVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         backgroundImage.image = UIImage(named: "Full Screen")
-        updateServicesNotOnShortcut()
+        viewModel.updateServicesNotOnShortcut()
         setupShortcutCollectionView()
         self.bgView.isHidden = true
         self.listOfServicesCollectionViewHeight.constant = 0
@@ -60,6 +59,9 @@ class DashboardVC: UIViewController {
         
         sideMenuTableView.isHidden = true
         sideMenuTableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsTableViewCell")
+        
+        sideMenuTableView.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileTableViewCell")
+        
         sideMenuTableView.center.x -= self.view.bounds.width
         sideMenuTableViewWidthConstraint.constant = 0
     }
@@ -121,11 +123,10 @@ class DashboardVC: UIViewController {
                             /// update on servicesOnShortcut model
                             servicesOnShortcut[indexPath.row].title = "Shortcut"
                             ///
-                            
                             cellAtIndexPath.shortcutLabel.text = "Shortcut"
                             cellAtIndexPath.shortcutImageView.image = nil
                             cellAtIndexPath.shortcutPlusImage.isHidden = false
-                            self.updateServicesNotOnShortcut()
+                            self.viewModel.updateServicesNotOnShortcut()
                             self.listOfServicesCollectionView.reloadData()
                             cellAtIndexPath.removeButton.isHidden = true
                         }), for: .touchUpInside)
@@ -209,11 +210,6 @@ extension DashboardVC {
             self.listOfServicesCollectionViewHeight.constant = 0
         }
     }
-    func updateServicesNotOnShortcut() {
-        
-        servicesNotOnShortcut = listOfServices.filter { service in
-            !servicesOnShortcut.contains { $0.title == service.title }
-        }
-    }
+    
 }
 

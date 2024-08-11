@@ -11,6 +11,7 @@ class transactionsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var icon: UIImageView!
     
+    @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var transactionTitle: UILabel!
     @IBOutlet weak var amount: UILabel!
     

@@ -14,6 +14,7 @@ struct SideMenuSection{
 }
 
 var sideMenuSections = [
+    ["": [SideMenuSection(icon: "Profile Icon", Title: "Siam Sharif Ami")]],
     ["Settings" : [SideMenuSection(icon: "Type=My QR", Title: "My QR"),
                SideMenuSection(icon: "Change Language", Title: "Change Language"),
                SideMenuSection(icon: "Appearance", Title: "Appearance"),

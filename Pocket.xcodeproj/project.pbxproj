@@ -21,11 +21,15 @@
 		7A4E90732C633A2600B308AD /* SideMenuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E90722C633A2600B308AD /* SideMenuSection.swift */; };
 		7A4E90772C63467700B308AD /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E90752C63467700B308AD /* SettingsTableViewCell.swift */; };
 		7A4E90782C63467700B308AD /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A4E90762C63467700B308AD /* SettingsTableViewCell.xib */; };
+		7A4E907B2C63708B00B308AD /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E90792C63708B00B308AD /* ProfileTableViewCell.swift */; };
+		7A4E907C2C63708B00B308AD /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A4E907A2C63708B00B308AD /* ProfileTableViewCell.xib */; };
 		7A85D1532C5A07E30041CF04 /* shortcutCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A85D1522C5A07E30041CF04 /* shortcutCollectionViewCell.xib */; };
 		7A85D1542C5A07E30041CF04 /* shortcutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A85D1512C5A07E30041CF04 /* shortcutCollectionViewCell.swift */; };
 		7AAD58342C61E123002958AE /* transactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAD58322C61E123002958AE /* transactionsTableViewCell.swift */; };
 		7AAD58352C61E123002958AE /* transactionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AAD58332C61E123002958AE /* transactionsTableViewCell.xib */; };
 		7AAD58372C61EBD0002958AE /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAD58362C61EBD0002958AE /* Transaction.swift */; };
+		7AB67A8D2C68A45000865807 /* DashboardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB67A8C2C68A45000865807 /* DashboardVM.swift */; };
+		7AB67A912C68D05D00865807 /* IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB67A902C68D05D00865807 /* IBInspectable.swift */; };
 		7AC0A5B22C58E20200B6D97E /* listOfServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0A5B02C58E20200B6D97E /* listOfServicesCollectionViewCell.swift */; };
 		7AC0A5B32C58E20200B6D97E /* listOfServicesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0A5B12C58E20200B6D97E /* listOfServicesCollectionViewCell.xib */; };
 		7AC0A5B52C590B8400B6D97E /* ServiceSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0A5B42C590B8400B6D97E /* ServiceSelectionViewController.swift */; };
@@ -69,11 +73,15 @@
 		7A4E90722C633A2600B308AD /* SideMenuSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuSection.swift; sourceTree = "<group>"; };
 		7A4E90752C63467700B308AD /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		7A4E90762C63467700B308AD /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		7A4E90792C63708B00B308AD /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		7A4E907A2C63708B00B308AD /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		7A85D1512C5A07E30041CF04 /* shortcutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shortcutCollectionViewCell.swift; sourceTree = "<group>"; };
 		7A85D1522C5A07E30041CF04 /* shortcutCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = shortcutCollectionViewCell.xib; sourceTree = "<group>"; };
 		7AAD58322C61E123002958AE /* transactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transactionsTableViewCell.swift; sourceTree = "<group>"; };
 		7AAD58332C61E123002958AE /* transactionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = transactionsTableViewCell.xib; sourceTree = "<group>"; };
 		7AAD58362C61EBD0002958AE /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		7AB67A8C2C68A45000865807 /* DashboardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVM.swift; sourceTree = "<group>"; };
+		7AB67A902C68D05D00865807 /* IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBInspectable.swift; sourceTree = "<group>"; };
 		7AC0A5B02C58E20200B6D97E /* listOfServicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listOfServicesCollectionViewCell.swift; sourceTree = "<group>"; };
 		7AC0A5B12C58E20200B6D97E /* listOfServicesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = listOfServicesCollectionViewCell.xib; sourceTree = "<group>"; };
 		7AC0A5B42C590B8400B6D97E /* ServiceSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSelectionViewController.swift; sourceTree = "<group>"; };
@@ -129,9 +137,11 @@
 		7A2E2C8C2C576997004C6B30 /* Pocket */ = {
 			isa = PBXGroup;
 			children = (
+				7AB67A8F2C68D04A00865807 /* IBInspectable */,
 				7AC0A5AE2C58E1C100B6D97E /* xib */,
 				7A2E2CC12C577029004C6B30 /* Model */,
-				7A2E2CBD2C576C8E004C6B30 /* Scenes */,
+				7AB67A8E2C68B97B00865807 /* View Controllers */,
+				7AB67A882C68A42400865807 /* ViewModel */,
 				7A2E2C8D2C576997004C6B30 /* AppDelegate.swift */,
 				7A2E2C8F2C576997004C6B30 /* SceneDelegate.swift */,
 				7A2E2C912C576997004C6B30 /* ViewController.swift */,
@@ -194,6 +204,8 @@
 			children = (
 				7A4E90752C63467700B308AD /* SettingsTableViewCell.swift */,
 				7A4E90762C63467700B308AD /* SettingsTableViewCell.xib */,
+				7A4E90792C63708B00B308AD /* ProfileTableViewCell.swift */,
+				7A4E907A2C63708B00B308AD /* ProfileTableViewCell.xib */,
 			);
 			path = SideMenuTableView;
 			sourceTree = "<group>";
@@ -205,6 +217,46 @@
 				7AAD58332C61E123002958AE /* transactionsTableViewCell.xib */,
 			);
 			path = DashboardTableView;
+			sourceTree = "<group>";
+		};
+		7AB67A882C68A42400865807 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7AB67A892C68A42D00865807 /* Scenes */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7AB67A892C68A42D00865807 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7AB67A8B2C68A43F00865807 /* Dashboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		7AB67A8B2C68A43F00865807 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				7AB67A8C2C68A45000865807 /* DashboardVM.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		7AB67A8E2C68B97B00865807 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7A2E2CBD2C576C8E004C6B30 /* Scenes */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7AB67A8F2C68D04A00865807 /* IBInspectable */ = {
+			isa = PBXGroup;
+			children = (
+				7AB67A902C68D05D00865807 /* IBInspectable.swift */,
+			);
+			path = IBInspectable;
 			sourceTree = "<group>";
 		};
 		7AC0A5AE2C58E1C100B6D97E /* xib */ = {
@@ -345,6 +397,7 @@
 				7A85D1532C5A07E30041CF04 /* shortcutCollectionViewCell.xib in Resources */,
 				7AAD58352C61E123002958AE /* transactionsTableViewCell.xib in Resources */,
 				7AC0A5B32C58E20200B6D97E /* listOfServicesCollectionViewCell.xib in Resources */,
+				7A4E907C2C63708B00B308AD /* ProfileTableViewCell.xib in Resources */,
 				7A2E2C9A2C576998004C6B30 /* Base in Resources */,
 				7A2E2C952C576997004C6B30 /* Base in Resources */,
 			);
@@ -371,12 +424,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AB67A912C68D05D00865807 /* IBInspectable.swift in Sources */,
 				7A2E2C922C576997004C6B30 /* ViewController.swift in Sources */,
 				7AAD58372C61EBD0002958AE /* Transaction.swift in Sources */,
 				7AC6B2922C5F9A1D0089620A /* DashboardVC+Delegate.swift in Sources */,
+				7A4E907B2C63708B00B308AD /* ProfileTableViewCell.swift in Sources */,
 				7A2E2CC52C5790EB004C6B30 /* Service.swift in Sources */,
 				7A4E90772C63467700B308AD /* SettingsTableViewCell.swift in Sources */,
 				7A2E2CC02C576CC9004C6B30 /* DashboardVC.swift in Sources */,
+				7AB67A8D2C68A45000865807 /* DashboardVM.swift in Sources */,
 				7A2E2C8E2C576997004C6B30 /* AppDelegate.swift in Sources */,
 				7AAD58342C61E123002958AE /* transactionsTableViewCell.swift in Sources */,
 				7A85D1542C5A07E30041CF04 /* shortcutCollectionViewCell.swift in Sources */,

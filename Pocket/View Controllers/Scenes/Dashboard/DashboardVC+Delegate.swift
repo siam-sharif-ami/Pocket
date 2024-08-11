@@ -12,9 +12,9 @@ extension DashboardVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.shortcutCollectionView {
             
-            selectedShortcutIndex = indexPath
+            self.viewModel.selectedShortcutIndex = indexPath
             let cell = shortcutCollectionView.cellForItem(at: indexPath) as! shortcutCollectionViewCell
-            if cell.removeButton.isHidden == true {
+            if cell.removeButton.isHidden == true  && cell.shortcutLabel.text == "Shortcut" {
                 animateListOfServicesCollectionView()
             }
             
@@ -22,8 +22,8 @@ extension DashboardVC: UICollectionViewDelegate {
         }else {
             /// listOfServicesCollectionView
             ///
-            if let selectedShortcutIndex  = self.selectedShortcutIndex {
-                let selectedService = servicesNotOnShortcut[indexPath.row]
+            if let selectedShortcutIndex  = self.viewModel.selectedShortcutIndex {
+                let selectedService = self.viewModel.servicesNotOnShortcut[indexPath.row]
                 
                 // update servicesOnShortcut Model
                 servicesOnShortcut[selectedShortcutIndex.row] = selectedService
@@ -35,7 +35,7 @@ extension DashboardVC: UICollectionViewDelegate {
                 selectedShortcut.shortcutLabel.text = selectedService.title
                 selectedShortcut.shortcutPlusImage.isHidden = true
                 
-                updateServicesNotOnShortcut()
+                viewModel.updateServicesNotOnShortcut()
                 dismissListOfServicesCollectionView()
             }
         }

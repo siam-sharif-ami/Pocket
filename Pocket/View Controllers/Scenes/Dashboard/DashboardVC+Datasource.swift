@@ -14,7 +14,7 @@ extension DashboardVC: UICollectionViewDataSource, UICollectionViewDelegateFlowL
             return servicesOnShortcut.count
         }else {
             /// listOfServicesCollectionView
-            return servicesNotOnShortcut.count
+            return self.viewModel.servicesNotOnShortcut.count
         }
     }
     
@@ -29,8 +29,8 @@ extension DashboardVC: UICollectionViewDataSource, UICollectionViewDelegateFlowL
             /// listOfServicesCollectionView
             
             let cell = listOfServicesCollectionView.dequeueReusableCell(withReuseIdentifier: "listOfServicesCollectionViewCell", for: indexPath) as! listOfServicesCollectionViewCell
-            cell.title.text = servicesNotOnShortcut[indexPath.row].title
-            cell.icon.image = UIImage(named: servicesNotOnShortcut[indexPath.row].icon)
+            cell.title.text = self.viewModel.servicesNotOnShortcut[indexPath.row].title
+            cell.icon.image = UIImage(named: self.viewModel.servicesNotOnShortcut[indexPath.row].icon)
             return cell
         }
     }
@@ -79,11 +79,13 @@ extension DashboardVC: UITableViewDataSource {
             
             switch(section){
             case 0:
-                sideMenuSections[0]["Settings"]!.count
+                sideMenuSections[0][""]!.count
             case 1:
-                sideMenuSections[1]["Account Service"]!.count
+                sideMenuSections[1]["Settings"]!.count
             case 2:
-                sideMenuSections[2]["Support"]!.count
+                sideMenuSections[2]["Account Service"]!.count
+            case 3:
+                sideMenuSections[3]["Support"]!.count
             default:
                 0
             }
@@ -97,20 +99,27 @@ extension DashboardVC: UITableViewDataSource {
         case self.sideMenuTableView:
             
             if indexPath.section == 0 {
-                let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as! SettingsTableViewCell
-                let sectionData = sideMenuSections[0]["Settings"]!
-                cell.icon.image = UIImage(named: sectionData[indexPath.row].icon)
-                cell.title.text = sectionData[indexPath.row].Title
+                let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
+                let sectionData = sideMenuSections[indexPath.section][""]!
+                cell.profileIcon.image = UIImage(named: sectionData[indexPath.row].icon)
+                cell.profileName.text = sectionData[indexPath.row].Title
                 return cell
             }else if indexPath.section == 1 {
                 let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as! SettingsTableViewCell
-                let sectionData = sideMenuSections[1]["Account Service"]!
+                let sectionData = sideMenuSections[indexPath.section]["Settings"]!
                 cell.icon.image = UIImage(named: sectionData[indexPath.row].icon)
                 cell.title.text = sectionData[indexPath.row].Title
                 return cell
-            }else  {
+            }else if indexPath.section == 2 {
                 let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as! SettingsTableViewCell
-                let sectionData = sideMenuSections[2]["Support"]!
+                let sectionData = sideMenuSections[indexPath.section]["Account Service"]!
+                cell.icon.image = UIImage(named: sectionData[indexPath.row].icon)
+                cell.title.text = sectionData[indexPath.row].Title
+                return cell
+            }
+            else {
+                let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as! SettingsTableViewCell
+                let sectionData = sideMenuSections[indexPath.section]["Support"]!
                 cell.icon.image = UIImage(named: sectionData[indexPath.row].icon)
                 cell.title.text = sectionData[indexPath.row].Title
                 return cell
@@ -150,10 +159,12 @@ extension DashboardVC: UITableViewDataSource {
         case self.sideMenuTableView:
             switch(section){
             case 0:
-                return "Settings"
+                return ""
             case 1:
-                return "Account Service"
+                return "Settings"
             case 2:
+                return "Account Service"
+            case 3:
                 return "Support"
             default:
                 return "Default"
@@ -167,7 +178,7 @@ extension DashboardVC: UITableViewDataSource {
         case self.transactionTableView:
             10
         default:
-            10
+            15
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -175,7 +186,11 @@ extension DashboardVC: UITableViewDataSource {
         case self.transactionTableView:
             60
         case self.sideMenuTableView:
-            50
+            if indexPath.section == 0 {
+                70
+            }else {
+                50
+            }
         default:
             0
         }
