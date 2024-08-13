@@ -11,11 +11,10 @@ class DashboardVC: UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var accountName: UIImageView!
     @IBOutlet weak var accountType: UILabel!
-    
-    @IBOutlet weak var balanceVisibleIcon: UIImageView!
     @IBOutlet weak var balanceAmount: UILabel!
     @IBOutlet weak var balanceIcon: UIImageView!
     @IBOutlet weak var balanceLabel: UILabel!
@@ -23,6 +22,7 @@ class DashboardVC: UIViewController {
     @IBOutlet weak var homeTopIcon1: UIImageView!
     @IBOutlet weak var shortcutSuperView: UIView!
     
+    @IBOutlet weak var balanceVisibilityButton: UIButton!
     @IBOutlet weak var sideMenuTableViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var sideMenuTableView: UITableView!
     @IBOutlet weak var bgView: UIView!
@@ -31,8 +31,10 @@ class DashboardVC: UIViewController {
     
     @IBOutlet weak var shortcutCollectionView: UICollectionView!
     
+    @IBOutlet weak var headerTransactionView: UIView!
     @IBOutlet weak var transactionTableView: UITableView!
     
+    @IBOutlet weak var footerTransactionView: UIView!
     
     
     let viewModel = DashboardVM()
@@ -40,7 +42,6 @@ class DashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backgroundImage.image = UIImage(named: "Full Screen")
         viewModel.updateServicesNotOnShortcut()
         setupShortcutCollectionView()
         self.bgView.isHidden = true
@@ -51,6 +52,9 @@ class DashboardVC: UIViewController {
         setUpTransactionTableView()
         setUpSideMenuTableView()
         setUpTapGestureForSideMenu()
+        headerTransactionView.set(corners: .topCorners, radius: 15)
+        footerTransactionView.set(corners: .bottomCorners, radius: 15)
+        
     }
     
     func setUpSideMenuTableView() {
@@ -142,20 +146,36 @@ class DashboardVC: UIViewController {
         dismissSideMenuTableView()
         dismissListOfServicesCollectionView()
     }
+        
+    @IBAction func balanceVisibilityToggle(_ sender: Any) {
+        
+        if viewModel.balanceIsHidden == true {
+            
+            self.balanceVisibilityButton.setImage(UIImage(named: "eyehidden"), for: .normal)
+            self.balanceAmount.text = "4,00,000"
+            viewModel.balanceIsHidden.toggle()
+        }else {
+            
+            balanceVisibilityButton.setImage(UIImage(named: "eyeopen"), for: .normal)
+            balanceAmount.text = "*******"
+            viewModel.balanceIsHidden.toggle()
+        }
+
+        
+    }
+    
     
 }
 
 extension UIView {
-    func startWiggle() {
-        let wiggle = CAKeyframeAnimation(keyPath: "transform.rotation")
-        wiggle.values = [-0.1, 0.1, -0.1]
-        wiggle.autoreverses = true
-        wiggle.duration = 0.1
-        wiggle.repeatCount = Float.infinity
-        layer.add(wiggle, forKey: "wiggle")
+    func startRotate() {
+        let rotate = CAKeyframeAnimation(keyPath: "transform.rotation")
+        rotate.values = [-2 , -1, 1]
+        rotate.autoreverses = false
+        layer.add(rotate, forKey: "rotate")
     }
     func stopWiggle() {
-        self.layer.removeAnimation(forKey: "wiggle")
+        self.layer.removeAnimation(forKey: "rotate")
     }
     
 }

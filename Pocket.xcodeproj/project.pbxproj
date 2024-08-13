@@ -35,6 +35,7 @@
 		7AC0A5B52C590B8400B6D97E /* ServiceSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0A5B42C590B8400B6D97E /* ServiceSelectionViewController.swift */; };
 		7AC6B2902C5F9A0E0089620A /* DashboardVC+Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6B28F2C5F9A0E0089620A /* DashboardVC+Datasource.swift */; };
 		7AC6B2922C5F9A1D0089620A /* DashboardVC+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6B2912C5F9A1D0089620A /* DashboardVC+Delegate.swift */; };
+		7AC76FED2C69E1FA00DDC888 /* CACornerMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC76FEC2C69E1FA00DDC888 /* CACornerMask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		7AC0A5B42C590B8400B6D97E /* ServiceSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSelectionViewController.swift; sourceTree = "<group>"; };
 		7AC6B28F2C5F9A0E0089620A /* DashboardVC+Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardVC+Datasource.swift"; sourceTree = "<group>"; };
 		7AC6B2912C5F9A1D0089620A /* DashboardVC+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardVC+Delegate.swift"; sourceTree = "<group>"; };
+		7AC76FEC2C69E1FA00DDC888 /* CACornerMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACornerMask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A0D12602C6B7CED0067CED0 /* Other Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Other Extensions";
+			sourceTree = "<group>";
+		};
 		7A2E2C812C576997004C6B30 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +151,7 @@
 				7A2E2CC12C577029004C6B30 /* Model */,
 				7AB67A8E2C68B97B00865807 /* View Controllers */,
 				7AB67A882C68A42400865807 /* ViewModel */,
+				7A0D12602C6B7CED0067CED0 /* Other Extensions */,
 				7A2E2C8D2C576997004C6B30 /* AppDelegate.swift */,
 				7A2E2C8F2C576997004C6B30 /* SceneDelegate.swift */,
 				7A2E2C912C576997004C6B30 /* ViewController.swift */,
@@ -195,6 +205,7 @@
 				7A2E2CC42C5790EB004C6B30 /* Service.swift */,
 				7AAD58362C61EBD0002958AE /* Transaction.swift */,
 				7A4E90722C633A2600B308AD /* SideMenuSection.swift */,
+				7AC76FEC2C69E1FA00DDC888 /* CACornerMask.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -438,6 +449,7 @@
 				7A85D1542C5A07E30041CF04 /* shortcutCollectionViewCell.swift in Sources */,
 				7AC6B2902C5F9A0E0089620A /* DashboardVC+Datasource.swift in Sources */,
 				7AC0A5B52C590B8400B6D97E /* ServiceSelectionViewController.swift in Sources */,
+				7AC76FED2C69E1FA00DDC888 /* CACornerMask.swift in Sources */,
 				7A2E2C902C576997004C6B30 /* SceneDelegate.swift in Sources */,
 				7AC0A5B22C58E20200B6D97E /* listOfServicesCollectionViewCell.swift in Sources */,
 				7A4E90732C633A2600B308AD /* SideMenuSection.swift in Sources */,

@@ -40,5 +40,5 @@ var listOfServices = [
     Service(id: 13, title:"Gas", icon: "Type=Gas"),
     Service(id: 14, title: "News", icon: "Type=News"),
     Service(id: 15, title: "EWPD", icon: "Type=EWPD"),
-    Service(id: 16,title: "Govt. Payment", icon: "Type=Gov")
+    Service(id: 16,title: "Govt. Pay", icon: "Type=Gov")
 ]

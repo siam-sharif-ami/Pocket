@@ -154,8 +154,6 @@ extension DashboardVC: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch(tableView){
-        case self.transactionTableView:
-            return "Transactions"
         case self.sideMenuTableView:
             switch(section){
             case 0:
@@ -170,15 +168,15 @@ extension DashboardVC: UITableViewDataSource {
                 return "Default"
             }
         default:
-            return "Default"
+            return nil
         }
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch(tableView){
-        case self.transactionTableView:
-            10
+        case self.sideMenuTableView:
+            40
         default:
-            15
+            0
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

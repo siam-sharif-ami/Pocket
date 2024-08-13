@@ -11,6 +11,7 @@ import UIKit
 public class DashboardVM {
     var servicesNotOnShortcut: [Service] = []
     var selectedShortcutIndex: IndexPath?
+    var balanceIsHidden: Bool = true
     
     init(servicesNotOnShortcut: [Service] = [], selectedShortcutIndex: IndexPath? = nil) {
         self.servicesNotOnShortcut = servicesNotOnShortcut
