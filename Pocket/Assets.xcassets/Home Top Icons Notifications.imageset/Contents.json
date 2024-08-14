@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Home Top Icons Notifications.png",
+      "filename" : "ic_no_notification.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "ic_no_notification@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "ic_no_notification@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

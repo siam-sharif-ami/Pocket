@@ -53,7 +53,6 @@ class DashboardVC: UIViewController {
         setUpSideMenuTableView()
         setUpTapGestureForSideMenu()
         headerTransactionView.set(corners: .topCorners, radius: 15)
-        footerTransactionView.set(corners: .bottomCorners, radius: 15)
         
     }
     
@@ -150,20 +149,58 @@ class DashboardVC: UIViewController {
     @IBAction func balanceVisibilityToggle(_ sender: Any) {
         
         if viewModel.balanceIsHidden == true {
-            
-            self.balanceVisibilityButton.setImage(UIImage(named: "eyehidden"), for: .normal)
-            self.balanceAmount.text = "4,00,000"
-            viewModel.balanceIsHidden.toggle()
+            DispatchQueue.main.async {
+                self.showBalanceLoader()
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+                self.stopBalanceLoader()
+                self.showBalance()
+                self.viewModel.balanceIsHidden.toggle()
+                self.balanceWillAutoHide()
+            }
+           
         }else {
             
-            balanceVisibilityButton.setImage(UIImage(named: "eyeopen"), for: .normal)
-            balanceAmount.text = "*******"
+            hideBalance()
             viewModel.balanceIsHidden.toggle()
         }
 
         
     }
     
+    func showBalance(){
+        balanceVisibilityButton.setImage(UIImage(named: "eyehidden"), for: .normal)
+        self.balanceAmount.text = "4,00,000"
+    }
+    
+    func hideBalance(){
+        balanceVisibilityButton.setImage(UIImage(named: "eyeopen"), for: .normal)
+        balanceAmount.text = "*******"
+    }
+    
+    func showBalanceLoader(){
+        balanceVisibilityButton.setImage(UIImage(named: "refresh"), for: .normal)
+        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotationAnimation.toValue = Double.pi * 2
+        rotationAnimation.duration = 1
+        balanceVisibilityButton.layer.add(rotationAnimation, forKey: "balanceLoader")
+    }
+    
+    func stopBalanceLoader(){
+        if balanceVisibilityButton.layer.animation(forKey: "balanceLoader") != nil {
+            balanceVisibilityButton.layer.removeAnimation(forKey: "balanceLoader")
+        }
+        
+    }
+    
+    func balanceWillAutoHide(){
+        if viewModel.balanceIsHidden == false {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
+                self.hideBalance()
+                self.viewModel.balanceIsHidden.toggle()
+            }
+        }
+    }
     
 }
 
