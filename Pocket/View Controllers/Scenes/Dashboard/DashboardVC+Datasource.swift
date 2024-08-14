@@ -179,22 +179,6 @@ extension DashboardVC: UITableViewDataSource {
             0
         }
     }
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        switch(tableView){
-        case self.transactionTableView:
-            return "See All"
-        default:
-            return nil
-        }
-    }
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        switch(tableView){
-        case self.transactionTableView:
-            40
-        default:
-            0
-        }
-    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch(tableView){
         case self.transactionTableView:

@@ -53,6 +53,7 @@ class DashboardVC: UIViewController {
         setUpSideMenuTableView()
         setUpTapGestureForSideMenu()
         headerTransactionView.set(corners: .topCorners, radius: 15)
+        footerTransactionView.set(corners: .bottomCorners, radius: 15)
         
     }
     
