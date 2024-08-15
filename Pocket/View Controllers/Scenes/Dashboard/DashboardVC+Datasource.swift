@@ -74,7 +74,7 @@ extension DashboardVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch(tableView){
         case self.transactionTableView:
-            transactionsOnTableView.count
+            min(3,transactionsOnTableView.count)
         case self.sideMenuTableView:
             
             switch(section){
@@ -93,6 +93,7 @@ extension DashboardVC: UITableViewDataSource {
             0
         }
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch(tableView){
             
@@ -177,6 +178,18 @@ extension DashboardVC: UITableViewDataSource {
             40
         default:
             0
+        }
+    }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FooterTransactionTableViewCell") as! FooterTransactionTableViewCell
+        cell.contentView.set(corners: .bottomCorners, radius: 15)
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if tableView == self.transactionTableView {
+            return 40
+        }else {
+            return 0
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

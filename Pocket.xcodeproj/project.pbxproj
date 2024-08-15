@@ -25,6 +25,18 @@
 		7A4E907C2C63708B00B308AD /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A4E907A2C63708B00B308AD /* ProfileTableViewCell.xib */; };
 		7A85D1532C5A07E30041CF04 /* shortcutCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A85D1522C5A07E30041CF04 /* shortcutCollectionViewCell.xib */; };
 		7A85D1542C5A07E30041CF04 /* shortcutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A85D1512C5A07E30041CF04 /* shortcutCollectionViewCell.swift */; };
+		7A89A5752C6DD8C900A9F83D /* EducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89A5742C6DD8C900A9F83D /* EducationViewController.swift */; };
+		7A89A57A2C6DD9E800A9F83D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89A5792C6DD9E800A9F83D /* Category.swift */; };
+		7A89A57D2C6DDAD800A9F83D /* EducationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89A57C2C6DDAD800A9F83D /* EducationViewModel.swift */; };
+		7A89A5822C6DE97E00A9F83D /* ext-UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89A5812C6DE97E00A9F83D /* ext-UIView.swift */; };
+		7A89A5A42C6E027F00A9F83D /* EducationViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89A5A32C6E027F00A9F83D /* EducationViewController+Delegate.swift */; };
+		7A89A5A62C6E029700A9F83D /* EducationViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89A5A52C6E029700A9F83D /* EducationViewController+DataSource.swift */; };
+		7A89A5AB2C6E03BE00A9F83D /* InstitutionCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89A5A92C6E03BE00A9F83D /* InstitutionCategoryCollectionViewCell.swift */; };
+		7A89A5AC2C6E03BE00A9F83D /* InstitutionCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A89A5AA2C6E03BE00A9F83D /* InstitutionCategoryCollectionViewCell.xib */; };
+		7A89A5B02C6E267700A9F83D /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89A5AE2C6E267700A9F83D /* RecentTableViewCell.swift */; };
+		7A89A5B12C6E267700A9F83D /* RecentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A89A5AF2C6E267700A9F83D /* RecentTableViewCell.xib */; };
+		7A89A5B42C6E2C5500A9F83D /* FooterTransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A89A5B32C6E2C5500A9F83D /* FooterTransactionTableViewCell.xib */; };
+		7A89A5B52C6E2C5500A9F83D /* FooterTransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89A5B22C6E2C5500A9F83D /* FooterTransactionTableViewCell.swift */; };
 		7AAD58342C61E123002958AE /* transactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAD58322C61E123002958AE /* transactionsTableViewCell.swift */; };
 		7AAD58352C61E123002958AE /* transactionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AAD58332C61E123002958AE /* transactionsTableViewCell.xib */; };
 		7AAD58372C61EBD0002958AE /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAD58362C61EBD0002958AE /* Transaction.swift */; };
@@ -78,6 +90,18 @@
 		7A4E907A2C63708B00B308AD /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		7A85D1512C5A07E30041CF04 /* shortcutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shortcutCollectionViewCell.swift; sourceTree = "<group>"; };
 		7A85D1522C5A07E30041CF04 /* shortcutCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = shortcutCollectionViewCell.xib; sourceTree = "<group>"; };
+		7A89A5742C6DD8C900A9F83D /* EducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationViewController.swift; sourceTree = "<group>"; };
+		7A89A5792C6DD9E800A9F83D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		7A89A57C2C6DDAD800A9F83D /* EducationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationViewModel.swift; sourceTree = "<group>"; };
+		7A89A5812C6DE97E00A9F83D /* ext-UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ext-UIView.swift"; sourceTree = "<group>"; };
+		7A89A5A32C6E027F00A9F83D /* EducationViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EducationViewController+Delegate.swift"; sourceTree = "<group>"; };
+		7A89A5A52C6E029700A9F83D /* EducationViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EducationViewController+DataSource.swift"; sourceTree = "<group>"; };
+		7A89A5A92C6E03BE00A9F83D /* InstitutionCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		7A89A5AA2C6E03BE00A9F83D /* InstitutionCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstitutionCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		7A89A5AE2C6E267700A9F83D /* RecentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
+		7A89A5AF2C6E267700A9F83D /* RecentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentTableViewCell.xib; sourceTree = "<group>"; };
+		7A89A5B22C6E2C5500A9F83D /* FooterTransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterTransactionTableViewCell.swift; sourceTree = "<group>"; };
+		7A89A5B32C6E2C5500A9F83D /* FooterTransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterTransactionTableViewCell.xib; sourceTree = "<group>"; };
 		7AAD58322C61E123002958AE /* transactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transactionsTableViewCell.swift; sourceTree = "<group>"; };
 		7AAD58332C61E123002958AE /* transactionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = transactionsTableViewCell.xib; sourceTree = "<group>"; };
 		7AAD58362C61EBD0002958AE /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
@@ -119,6 +143,7 @@
 		7A0D12602C6B7CED0067CED0 /* Other Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7A89A5812C6DE97E00A9F83D /* ext-UIView.swift */,
 			);
 			path = "Other Extensions";
 			sourceTree = "<group>";
@@ -183,6 +208,7 @@
 		7A2E2CBD2C576C8E004C6B30 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7A89A5732C6DD8BB00A9F83D /* Education */,
 				7AC6B2932C5F9A250089620A /* Selection */,
 				7A2E2CBE2C576C95004C6B30 /* Dashboard */,
 			);
@@ -202,10 +228,8 @@
 		7A2E2CC12C577029004C6B30 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7A2E2CC42C5790EB004C6B30 /* Service.swift */,
-				7AAD58362C61EBD0002958AE /* Transaction.swift */,
-				7A4E90722C633A2600B308AD /* SideMenuSection.swift */,
-				7AC76FEC2C69E1FA00DDC888 /* CACornerMask.swift */,
+				7A89A57E2C6DDAE200A9F83D /* Dashboard */,
+				7A89A5762C6DD99700A9F83D /* Education */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,8 +250,74 @@
 			children = (
 				7AAD58322C61E123002958AE /* transactionsTableViewCell.swift */,
 				7AAD58332C61E123002958AE /* transactionsTableViewCell.xib */,
+				7A89A5B22C6E2C5500A9F83D /* FooterTransactionTableViewCell.swift */,
+				7A89A5B32C6E2C5500A9F83D /* FooterTransactionTableViewCell.xib */,
 			);
 			path = DashboardTableView;
+			sourceTree = "<group>";
+		};
+		7A89A5732C6DD8BB00A9F83D /* Education */ = {
+			isa = PBXGroup;
+			children = (
+				7A89A5742C6DD8C900A9F83D /* EducationViewController.swift */,
+				7A89A5A32C6E027F00A9F83D /* EducationViewController+Delegate.swift */,
+				7A89A5A52C6E029700A9F83D /* EducationViewController+DataSource.swift */,
+			);
+			path = Education;
+			sourceTree = "<group>";
+		};
+		7A89A5762C6DD99700A9F83D /* Education */ = {
+			isa = PBXGroup;
+			children = (
+				7A89A5792C6DD9E800A9F83D /* Category.swift */,
+			);
+			path = Education;
+			sourceTree = "<group>";
+		};
+		7A89A57B2C6DDACA00A9F83D /* Education */ = {
+			isa = PBXGroup;
+			children = (
+				7A89A57C2C6DDAD800A9F83D /* EducationViewModel.swift */,
+			);
+			path = Education;
+			sourceTree = "<group>";
+		};
+		7A89A57E2C6DDAE200A9F83D /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				7A2E2CC42C5790EB004C6B30 /* Service.swift */,
+				7AAD58362C61EBD0002958AE /* Transaction.swift */,
+				7A4E90722C633A2600B308AD /* SideMenuSection.swift */,
+				7AC76FEC2C69E1FA00DDC888 /* CACornerMask.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		7A89A5A72C6E038700A9F83D /* Education */ = {
+			isa = PBXGroup;
+			children = (
+				7A89A5AD2C6E265400A9F83D /* RecentTableView */,
+				7A89A5A82C6E039B00A9F83D /* InstitutionCollectionView */,
+			);
+			path = Education;
+			sourceTree = "<group>";
+		};
+		7A89A5A82C6E039B00A9F83D /* InstitutionCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				7A89A5A92C6E03BE00A9F83D /* InstitutionCategoryCollectionViewCell.swift */,
+				7A89A5AA2C6E03BE00A9F83D /* InstitutionCategoryCollectionViewCell.xib */,
+			);
+			path = InstitutionCollectionView;
+			sourceTree = "<group>";
+		};
+		7A89A5AD2C6E265400A9F83D /* RecentTableView */ = {
+			isa = PBXGroup;
+			children = (
+				7A89A5AE2C6E267700A9F83D /* RecentTableViewCell.swift */,
+				7A89A5AF2C6E267700A9F83D /* RecentTableViewCell.xib */,
+			);
+			path = RecentTableView;
 			sourceTree = "<group>";
 		};
 		7AB67A882C68A42400865807 /* ViewModel */ = {
@@ -241,6 +331,7 @@
 		7AB67A892C68A42D00865807 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7A89A57B2C6DDACA00A9F83D /* Education */,
 				7AB67A8B2C68A43F00865807 /* Dashboard */,
 			);
 			path = Scenes;
@@ -273,6 +364,7 @@
 		7AC0A5AE2C58E1C100B6D97E /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				7A89A5A72C6E038700A9F83D /* Education */,
 				7A4E90742C63465300B308AD /* SideMenuTableView */,
 				7A85D1502C5A07B50041CF04 /* DashboardTableView */,
 				7AC0A5AF2C58E1C800B6D97E /* DashboardServiceCollectionView */,
@@ -403,8 +495,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A89A5B12C6E267700A9F83D /* RecentTableViewCell.xib in Resources */,
+				7A89A5AC2C6E03BE00A9F83D /* InstitutionCategoryCollectionViewCell.xib in Resources */,
 				7A4E90782C63467700B308AD /* SettingsTableViewCell.xib in Resources */,
 				7A2E2C972C576998004C6B30 /* Assets.xcassets in Resources */,
+				7A89A5B42C6E2C5500A9F83D /* FooterTransactionTableViewCell.xib in Resources */,
 				7A85D1532C5A07E30041CF04 /* shortcutCollectionViewCell.xib in Resources */,
 				7AAD58352C61E123002958AE /* transactionsTableViewCell.xib in Resources */,
 				7AC0A5B32C58E20200B6D97E /* listOfServicesCollectionViewCell.xib in Resources */,
@@ -443,13 +538,22 @@
 				7A2E2CC52C5790EB004C6B30 /* Service.swift in Sources */,
 				7A4E90772C63467700B308AD /* SettingsTableViewCell.swift in Sources */,
 				7A2E2CC02C576CC9004C6B30 /* DashboardVC.swift in Sources */,
+				7A89A5B02C6E267700A9F83D /* RecentTableViewCell.swift in Sources */,
+				7A89A57D2C6DDAD800A9F83D /* EducationViewModel.swift in Sources */,
 				7AB67A8D2C68A45000865807 /* DashboardVM.swift in Sources */,
+				7A89A5B52C6E2C5500A9F83D /* FooterTransactionTableViewCell.swift in Sources */,
+				7A89A5A42C6E027F00A9F83D /* EducationViewController+Delegate.swift in Sources */,
 				7A2E2C8E2C576997004C6B30 /* AppDelegate.swift in Sources */,
 				7AAD58342C61E123002958AE /* transactionsTableViewCell.swift in Sources */,
+				7A89A57A2C6DD9E800A9F83D /* Category.swift in Sources */,
 				7A85D1542C5A07E30041CF04 /* shortcutCollectionViewCell.swift in Sources */,
+				7A89A5AB2C6E03BE00A9F83D /* InstitutionCategoryCollectionViewCell.swift in Sources */,
 				7AC6B2902C5F9A0E0089620A /* DashboardVC+Datasource.swift in Sources */,
 				7AC0A5B52C590B8400B6D97E /* ServiceSelectionViewController.swift in Sources */,
 				7AC76FED2C69E1FA00DDC888 /* CACornerMask.swift in Sources */,
+				7A89A5822C6DE97E00A9F83D /* ext-UIView.swift in Sources */,
+				7A89A5752C6DD8C900A9F83D /* EducationViewController.swift in Sources */,
+				7A89A5A62C6E029700A9F83D /* EducationViewController+DataSource.swift in Sources */,
 				7A2E2C902C576997004C6B30 /* SceneDelegate.swift in Sources */,
 				7AC0A5B22C58E20200B6D97E /* listOfServicesCollectionViewCell.swift in Sources */,
 				7A4E90732C633A2600B308AD /* SideMenuSection.swift in Sources */,

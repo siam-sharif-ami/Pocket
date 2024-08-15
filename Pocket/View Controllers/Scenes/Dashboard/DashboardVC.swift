@@ -31,10 +31,10 @@ class DashboardVC: UIViewController {
     
     @IBOutlet weak var shortcutCollectionView: UICollectionView!
     
+    @IBOutlet weak var transactionTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var headerTransactionView: UIView!
     @IBOutlet weak var transactionTableView: UITableView!
     
-    @IBOutlet weak var footerTransactionView: UIView!
     
     
     let viewModel = DashboardVM()
@@ -53,8 +53,11 @@ class DashboardVC: UIViewController {
         setUpSideMenuTableView()
         setUpTapGestureForSideMenu()
         headerTransactionView.set(corners: .topCorners, radius: 15)
-        footerTransactionView.set(corners: .bottomCorners, radius: 15)
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.transactionTableViewHeight.constant = self.transactionTableView.contentSize.height
     }
     
     func setUpSideMenuTableView() {
@@ -110,6 +113,7 @@ class DashboardVC: UIViewController {
         
         let nib = UINib(nibName: "transactionsTableViewCell", bundle: nil)
         transactionTableView.register(nib, forCellReuseIdentifier: "transactionsTableViewCell")
+        transactionTableView.register(UINib(nibName: "FooterTransactionTableViewCell", bundle: nil), forCellReuseIdentifier: "FooterTransactionTableViewCell")
     }
     
     @objc func handleLongPressOnShortcutCollectionView(_ sender: UILongPressGestureRecognizer){
