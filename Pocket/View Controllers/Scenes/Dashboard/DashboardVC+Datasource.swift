@@ -43,7 +43,7 @@ extension DashboardVC: UICollectionViewDataSource, UICollectionViewDelegateFlowL
         //        let spaceBetweenCells = flowLayout.minimumInteritemSpacing * (columns - 1)
         //        let adjustedWidth = collectionViewWidth - spaceBetweenCells
         /* let width: CGFloat = 65*/ /*adjustedWidth / columns*/
-        let width = collectionView.bounds.width / 4.75
+        let width = collectionView.bounds.width / 4.5
         print(width)
         let height: CGFloat = 90
         return CGSize(width: width, height: height)
@@ -52,7 +52,7 @@ extension DashboardVC: UICollectionViewDataSource, UICollectionViewDelegateFlowL
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView == self.listOfServicesCollectionView {
-            return UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
+            return UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         }else {
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
