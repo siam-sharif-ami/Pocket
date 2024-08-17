@@ -38,3 +38,8 @@ extension EducationViewController: UICollectionViewDelegate, UICollectionViewDel
     
     
 }
+
+
+extension EducationViewController: UITableViewDelegate {
+    
+}

@@ -23,3 +23,17 @@ extension EducationViewController: UICollectionViewDataSource {
     
     
 }
+extension EducationViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecentTableViewCell") as! RecentTableViewCell
+        cell.iconView.image = UIImage(named: categories[0].logo)
+        cell.name.text = categories[0].name
+        return cell
+    }
+    
+    
+}

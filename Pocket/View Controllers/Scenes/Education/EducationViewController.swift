@@ -16,7 +16,15 @@ class EducationViewController: UIViewController {
     @IBOutlet weak var viewReceiptButton: UIButton!
     @IBOutlet weak var institutionCategoryCollectionView: UICollectionView!
     
+    
     @IBOutlet weak var recentView: UIView!
+    
+    @IBOutlet weak var recentTableView: UITableView!
+    
+    @IBOutlet weak var recentTableViewHeight: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var institutionCategoryView: UIView!
     
     var educationViewModel = EducationViewModel()
     
@@ -25,14 +33,31 @@ class EducationViewController: UIViewController {
         
         customizeReceiptButton()
         setUpInstitutionCategoryCollectionView()
-        customizeRecentView()
+        customizeCornerViews()
+        customizeRecentTableView()
     }
     
     override func viewDidLayoutSubviews() {
     }
     
-    func customizeRecentView(){
-        recentView.set(corners: [.topCorners, .bottomCorners] , radius: 15)
+    func customizeRecentTableView(){
+        
+        self.recentTableView.dataSource = self
+        self.recentTableView.delegate = self
+        
+        
+        recentTableView.register(UINib(nibName: "RecentTableViewCell", bundle: nil), forCellReuseIdentifier: "RecentTableViewCell")
+        
+       
+        
+        //self.recentTableViewHeight.constant = self.recentTableView.contentSize.height
+    }
+    
+    func customizeCornerViews(){
+       
+        self.institutionCategoryView.set(corners: .topCorners, radius: 12)
+        self.recentView.set(corners: .topCorners, radius: 12)
+        /// set the height to contentSize
     }
     
     func customizeReceiptButton(){
@@ -46,6 +71,10 @@ class EducationViewController: UIViewController {
     func setUpInstitutionCategoryCollectionView(){
         institutionCategoryCollectionView.delegate = self
         institutionCategoryCollectionView.dataSource = self
+        
+        
+        /// set the height to contentSize
+        
         
         institutionCategoryCollectionView.register(UINib(nibName: "InstitutionCategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "InstitutionCategoryCollectionViewCell")
         
