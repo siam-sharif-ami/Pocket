@@ -23,6 +23,11 @@
 		7A4E90782C63467700B308AD /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A4E90762C63467700B308AD /* SettingsTableViewCell.xib */; };
 		7A4E907B2C63708B00B308AD /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E90792C63708B00B308AD /* ProfileTableViewCell.swift */; };
 		7A4E907C2C63708B00B308AD /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A4E907A2C63708B00B308AD /* ProfileTableViewCell.xib */; };
+		7A4F021F2C71BE26005E48C0 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F021E2C71BE26005E48C0 /* CustomButton.swift */; };
+		7A4F02232C71C051005E48C0 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F02222C71C051005E48C0 /* Helper.swift */; };
+		7A4F02252C71C20D005E48C0 /* DeviceVariants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F02242C71C20D005E48C0 /* DeviceVariants.swift */; };
+		7A4F02292C71C34F005E48C0 /* Other+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F02282C71C34F005E48C0 /* Other+Extension.swift */; };
+		7A4F022C2C71CE40005E48C0 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F022B2C71CE40005E48C0 /* testViewController.swift */; };
 		7A85D1532C5A07E30041CF04 /* shortcutCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A85D1522C5A07E30041CF04 /* shortcutCollectionViewCell.xib */; };
 		7A85D1542C5A07E30041CF04 /* shortcutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A85D1512C5A07E30041CF04 /* shortcutCollectionViewCell.swift */; };
 		7A89A5752C6DD8C900A9F83D /* EducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89A5742C6DD8C900A9F83D /* EducationViewController.swift */; };
@@ -88,6 +93,11 @@
 		7A4E90762C63467700B308AD /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		7A4E90792C63708B00B308AD /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		7A4E907A2C63708B00B308AD /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		7A4F021E2C71BE26005E48C0 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		7A4F02222C71C051005E48C0 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		7A4F02242C71C20D005E48C0 /* DeviceVariants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceVariants.swift; sourceTree = "<group>"; };
+		7A4F02282C71C34F005E48C0 /* Other+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Other+Extension.swift"; sourceTree = "<group>"; };
+		7A4F022B2C71CE40005E48C0 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		7A85D1512C5A07E30041CF04 /* shortcutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shortcutCollectionViewCell.swift; sourceTree = "<group>"; };
 		7A85D1522C5A07E30041CF04 /* shortcutCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = shortcutCollectionViewCell.xib; sourceTree = "<group>"; };
 		7A89A5742C6DD8C900A9F83D /* EducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationViewController.swift; sourceTree = "<group>"; };
@@ -140,12 +150,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7A0D12602C6B7CED0067CED0 /* Other Extensions */ = {
+		7A0D12602C6B7CED0067CED0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				7A89A5812C6DE97E00A9F83D /* ext-UIView.swift */,
+				7A4F02282C71C34F005E48C0 /* Other+Extension.swift */,
 			);
-			path = "Other Extensions";
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7A2E2C812C576997004C6B30 = {
@@ -171,12 +182,13 @@
 		7A2E2C8C2C576997004C6B30 /* Pocket */ = {
 			isa = PBXGroup;
 			children = (
+				7A4F021D2C71BE13005E48C0 /* Utility */,
 				7AB67A8F2C68D04A00865807 /* IBInspectable */,
 				7AC0A5AE2C58E1C100B6D97E /* xib */,
 				7A2E2CC12C577029004C6B30 /* Model */,
 				7AB67A8E2C68B97B00865807 /* View Controllers */,
 				7AB67A882C68A42400865807 /* ViewModel */,
-				7A0D12602C6B7CED0067CED0 /* Other Extensions */,
+				7A0D12602C6B7CED0067CED0 /* Extensions */,
 				7A2E2C8D2C576997004C6B30 /* AppDelegate.swift */,
 				7A2E2C8F2C576997004C6B30 /* SceneDelegate.swift */,
 				7A2E2C912C576997004C6B30 /* ViewController.swift */,
@@ -208,6 +220,7 @@
 		7A2E2CBD2C576C8E004C6B30 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7A4F022A2C71CE33005E48C0 /* test */,
 				7A89A5732C6DD8BB00A9F83D /* Education */,
 				7AC6B2932C5F9A250089620A /* Selection */,
 				7A2E2CBE2C576C95004C6B30 /* Dashboard */,
@@ -243,6 +256,24 @@
 				7A4E907A2C63708B00B308AD /* ProfileTableViewCell.xib */,
 			);
 			path = SideMenuTableView;
+			sourceTree = "<group>";
+		};
+		7A4F021D2C71BE13005E48C0 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				7A4F021E2C71BE26005E48C0 /* CustomButton.swift */,
+				7A4F02222C71C051005E48C0 /* Helper.swift */,
+				7A4F02242C71C20D005E48C0 /* DeviceVariants.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		7A4F022A2C71CE33005E48C0 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				7A4F022B2C71CE40005E48C0 /* testViewController.swift */,
+			);
+			path = test;
 			sourceTree = "<group>";
 		};
 		7A85D1502C5A07B50041CF04 /* DashboardTableView */ = {
@@ -531,9 +562,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AB67A912C68D05D00865807 /* IBInspectable.swift in Sources */,
+				7A4F02252C71C20D005E48C0 /* DeviceVariants.swift in Sources */,
 				7A2E2C922C576997004C6B30 /* ViewController.swift in Sources */,
 				7AAD58372C61EBD0002958AE /* Transaction.swift in Sources */,
 				7AC6B2922C5F9A1D0089620A /* DashboardVC+Delegate.swift in Sources */,
+				7A4F02292C71C34F005E48C0 /* Other+Extension.swift in Sources */,
+				7A4F021F2C71BE26005E48C0 /* CustomButton.swift in Sources */,
 				7A4E907B2C63708B00B308AD /* ProfileTableViewCell.swift in Sources */,
 				7A2E2CC52C5790EB004C6B30 /* Service.swift in Sources */,
 				7A4E90772C63467700B308AD /* SettingsTableViewCell.swift in Sources */,
@@ -545,6 +579,7 @@
 				7A89A5A42C6E027F00A9F83D /* EducationViewController+Delegate.swift in Sources */,
 				7A2E2C8E2C576997004C6B30 /* AppDelegate.swift in Sources */,
 				7AAD58342C61E123002958AE /* transactionsTableViewCell.swift in Sources */,
+				7A4F022C2C71CE40005E48C0 /* testViewController.swift in Sources */,
 				7A89A57A2C6DD9E800A9F83D /* Category.swift in Sources */,
 				7A85D1542C5A07E30041CF04 /* shortcutCollectionViewCell.swift in Sources */,
 				7A89A5AB2C6E03BE00A9F83D /* InstitutionCategoryCollectionViewCell.swift in Sources */,
@@ -556,6 +591,7 @@
 				7A89A5A62C6E029700A9F83D /* EducationViewController+DataSource.swift in Sources */,
 				7A2E2C902C576997004C6B30 /* SceneDelegate.swift in Sources */,
 				7AC0A5B22C58E20200B6D97E /* listOfServicesCollectionViewCell.swift in Sources */,
+				7A4F02232C71C051005E48C0 /* Helper.swift in Sources */,
 				7A4E90732C633A2600B308AD /* SideMenuSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

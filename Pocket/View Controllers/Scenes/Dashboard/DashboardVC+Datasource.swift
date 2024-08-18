@@ -180,18 +180,18 @@ extension DashboardVC: UITableViewDataSource {
             0
         }
     }
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FooterTransactionTableViewCell") as! FooterTransactionTableViewCell
-        cell.contentView.set(corners: .bottomCorners, radius: 15)
-        return cell
-    }
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if tableView == self.transactionTableView {
-            return 40
-        }else {
-            return 0
-        }
-    }
+//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "FooterTransactionTableViewCell") as! FooterTransactionTableViewCell
+//        cell.bgView.set(corners: .bottomCorners, radius: 15)
+//        return cell
+//    }
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        if tableView == self.transactionTableView {
+//            return 40
+//        }else {
+//            return 0
+//        }
+//    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch(tableView){
         case self.transactionTableView:

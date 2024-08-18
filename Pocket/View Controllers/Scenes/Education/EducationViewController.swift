@@ -31,7 +31,6 @@ class EducationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        customizeReceiptButton()
         setUpInstitutionCategoryCollectionView()
         customizeCornerViews()
         customizeRecentTableView()
@@ -59,14 +58,7 @@ class EducationViewController: UIViewController {
         self.recentView.set(corners: .topCorners, radius: 12)
         /// set the height to contentSize
     }
-    
-    func customizeReceiptButton(){
-        viewReceiptButton.layer.cornerRadius = 10
-        viewReceiptButton.applyGradient(colours: [UIColor.white ,
-                                                  UIColor.systemYellow,
-                                                  UIColor.black] )
-        viewReceiptButton.clipsToBounds = true
-    }
+
     
     func setUpInstitutionCategoryCollectionView(){
         institutionCategoryCollectionView.delegate = self

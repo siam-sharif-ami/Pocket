@@ -18,10 +18,12 @@ var notOnShortcutServices: [Service] {
 
 class ServiceSelectionViewController: UIViewController {
     
-    @IBOutlet weak var button: UIButton!
     @IBOutlet weak var listOfServicesCollectionView: UICollectionView!
     
+    @IBOutlet weak var performSegueButton: UIButton!
+    
     @IBOutlet weak var listOfServicesCollectionViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var button: UIButton!
     
     @IBOutlet weak var listOfServicesCellSuperView: UIView!
     
@@ -37,7 +39,6 @@ class ServiceSelectionViewController: UIViewController {
         self.listOfServicesCollectionView.center.y = self.view.bounds.maxY
         setUplistOfServicesCollectionView()
     }
-    
     func setUplistOfServicesCollectionView(){
         
         listOfServicesCollectionView.delegate = self
