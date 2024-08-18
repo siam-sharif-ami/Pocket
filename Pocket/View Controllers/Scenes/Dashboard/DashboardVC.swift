@@ -22,6 +22,7 @@ class DashboardVC: UIViewController {
     @IBOutlet weak var homeTopIcon1: UIImageView!
     @IBOutlet weak var shortcutSuperView: UIView!
     
+    @IBOutlet weak var TransactionTableFooterView: UIView!
     @IBOutlet weak var balanceVisibilityButton: UIButton!
     @IBOutlet weak var sideMenuTableViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var sideMenuTableView: UITableView!
@@ -35,6 +36,7 @@ class DashboardVC: UIViewController {
     @IBOutlet weak var headerTransactionView: UIView!
     @IBOutlet weak var transactionTableView: UITableView!
     
+    @IBOutlet weak var transactionFooterViewsContentView: UIView!
     
     
     let viewModel = DashboardVM()
@@ -53,7 +55,7 @@ class DashboardVC: UIViewController {
         setUpSideMenuTableView()
         setUpTapGestureForSideMenu()
         headerTransactionView.set(corners: .topCorners, radius: 15)
-        
+        transactionFooterViewsContentView.set(corners: .bottomCorners, radius: 15)
     }
     
     override func viewDidLayoutSubviews() {

@@ -11,6 +11,7 @@ class EducationViewModel {
     
     var matchedCategories: [Category]
     var matchedInstitutions: [Institutions]
+    var selectedIndexOnCategoryCollectionView: IndexPath?
     
     init(matchedCategories: [Category] = categories, matchedInstitutions: [Institutions] = categories.flatMap{ $0.institutions }) {
         self.matchedCategories = matchedCategories

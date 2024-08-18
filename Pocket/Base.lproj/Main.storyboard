@@ -274,7 +274,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rkN-9h-LQ9">
                                 <rect key="frame" x="20" y="523.66666666666663" width="353" height="250"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="bKS-nh-TOV"/>
                                 </constraints>
@@ -299,20 +299,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="gpZ-wR-EoZ" firstAttribute="centerY" secondItem="d9N-xt-qFo" secondAttribute="centerY" id="GzS-IV-BkB"/>
                                                 <constraint firstItem="gpZ-wR-EoZ" firstAttribute="centerX" secondItem="d9N-xt-qFo" secondAttribute="centerX" id="opi-2z-9o7"/>
                                             </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <integer key="value" value="15"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" red="0.94509804249999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstItem="xKW-ha-gUt" firstAttribute="top" secondItem="4HH-gi-v6I" secondAttribute="top" id="QdM-hF-7ZS"/>
                                         <constraint firstItem="d9N-xt-qFo" firstAttribute="top" secondItem="xKW-ha-gUt" secondAttribute="bottom" id="RMu-ST-hyI"/>
@@ -435,6 +429,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZF5-1Z-aqk"/>
                     <connections>
+                        <outlet property="TransactionTableFooterView" destination="4HH-gi-v6I" id="kN5-En-Gy0"/>
                         <outlet property="accountName" destination="DQe-jA-orb" id="r4P-wf-FaB"/>
                         <outlet property="accountType" destination="ycx-Vi-Egj" id="8el-td-95g"/>
                         <outlet property="backgroundImage" destination="BHV-Nt-cds" id="ILH-1d-vzT"/>
@@ -454,6 +449,7 @@
                         <outlet property="shortcutSuperView" destination="Wg4-V8-XZP" id="IuZ-Jn-klS"/>
                         <outlet property="sideMenuTableView" destination="IjX-yz-FeQ" id="5kO-2h-4VG"/>
                         <outlet property="sideMenuTableViewWidthConstraint" destination="qur-8r-Bm5" id="4WU-Qv-VRf"/>
+                        <outlet property="transactionFooterViewsContentView" destination="d9N-xt-qFo" id="7ef-H4-rVE"/>
                         <outlet property="transactionTableView" destination="rkN-9h-LQ9" id="J6w-HH-Tk3"/>
                         <outlet property="transactionTableViewHeight" destination="bKS-nh-TOV" id="XA0-Ho-se0"/>
                     </connections>
@@ -480,7 +476,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sL-XY-Typ" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="829"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="859"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5uz-bH-Xqe" userLabel="Background View">
                                                 <rect key="frame" x="0.0" y="-59" width="393" height="995"/>
@@ -620,27 +616,37 @@
                                                 </constraints>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ffj-dv-3GF">
-                                                <rect key="frame" x="20" y="530" width="353" height="279"/>
+                                                <rect key="frame" x="20" y="530" width="353" height="284"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="279" id="GWO-cd-SJ5"/>
+                                                    <constraint firstAttribute="height" constant="284" id="odp-kF-e0Z"/>
                                                 </constraints>
                                             </tableView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46I-0a-DYA" userLabel="Corner View">
+                                                <rect key="frame" x="20" y="814" width="353" height="25"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="4E7-IR-8vP"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="95J-ye-IPA" firstAttribute="top" secondItem="4sL-XY-Typ" secondAttribute="top" constant="20" id="45O-KU-5tl"/>
-                                            <constraint firstAttribute="bottom" secondItem="Ffj-dv-3GF" secondAttribute="bottom" constant="20" symbolic="YES" id="ENA-Qc-0yR"/>
                                             <constraint firstItem="d7s-A8-OLb" firstAttribute="leading" secondItem="68v-yf-dLS" secondAttribute="leading" id="FK9-Sy-QJh"/>
                                             <constraint firstItem="68v-yf-dLS" firstAttribute="leading" secondItem="5Lb-zl-su1" secondAttribute="leading" id="Ffg-QX-D7M"/>
                                             <constraint firstItem="5Lb-zl-su1" firstAttribute="top" secondItem="95J-ye-IPA" secondAttribute="bottom" constant="20" id="HBa-v5-sCk"/>
+                                            <constraint firstItem="Ffj-dv-3GF" firstAttribute="trailing" secondItem="d7s-A8-OLb" secondAttribute="trailing" id="Keo-5Y-fL7"/>
+                                            <constraint firstAttribute="bottom" secondItem="46I-0a-DYA" secondAttribute="bottom" constant="20" id="XRa-Qw-fWp"/>
+                                            <constraint firstItem="46I-0a-DYA" firstAttribute="leading" secondItem="Ffj-dv-3GF" secondAttribute="leading" id="aa7-ZX-gFA"/>
+                                            <constraint firstItem="Ffj-dv-3GF" firstAttribute="leading" secondItem="d7s-A8-OLb" secondAttribute="leading" id="daD-1K-FtS"/>
+                                            <constraint firstItem="Ffj-dv-3GF" firstAttribute="top" secondItem="Exi-H4-T1q" secondAttribute="bottom" id="e01-hE-zgn"/>
                                             <constraint firstItem="95J-ye-IPA" firstAttribute="leading" secondItem="4sL-XY-Typ" secondAttribute="leading" constant="20" id="eNg-XQ-lyG"/>
                                             <constraint firstItem="d7s-A8-OLb" firstAttribute="top" secondItem="68v-yf-dLS" secondAttribute="bottom" constant="20" id="eUS-sC-P3G"/>
-                                            <constraint firstItem="Ffj-dv-3GF" firstAttribute="leading" secondItem="d7s-A8-OLb" secondAttribute="leading" id="g8i-q6-tnP"/>
-                                            <constraint firstItem="Ffj-dv-3GF" firstAttribute="top" secondItem="d7s-A8-OLb" secondAttribute="bottom" id="gMc-pT-Wst"/>
+                                            <constraint firstItem="46I-0a-DYA" firstAttribute="trailing" secondItem="Ffj-dv-3GF" secondAttribute="trailing" id="en2-3a-Dcs"/>
                                             <constraint firstAttribute="trailing" secondItem="95J-ye-IPA" secondAttribute="trailing" constant="20" id="hyk-aH-7il"/>
+                                            <constraint firstItem="46I-0a-DYA" firstAttribute="top" secondItem="Ffj-dv-3GF" secondAttribute="bottom" id="jvd-1I-sWD"/>
                                             <constraint firstItem="5Lb-zl-su1" firstAttribute="trailing" secondItem="95J-ye-IPA" secondAttribute="trailing" id="p5I-7r-QPC"/>
-                                            <constraint firstItem="Ffj-dv-3GF" firstAttribute="trailing" secondItem="d7s-A8-OLb" secondAttribute="trailing" id="qRK-6z-j43"/>
                                             <constraint firstItem="d7s-A8-OLb" firstAttribute="trailing" secondItem="68v-yf-dLS" secondAttribute="trailing" id="rWL-oA-rix"/>
                                             <constraint firstItem="5Lb-zl-su1" firstAttribute="leading" secondItem="95J-ye-IPA" secondAttribute="leading" id="rau-Uq-Rth"/>
                                             <constraint firstItem="68v-yf-dLS" firstAttribute="trailing" secondItem="5Lb-zl-su1" secondAttribute="trailing" id="wMx-7j-ubS"/>
@@ -673,7 +679,8 @@
                         <outlet property="institutionCategoryCollectionView" destination="9Ts-aC-nKj" id="dzl-Bw-JxO"/>
                         <outlet property="institutionCategoryView" destination="68v-yf-dLS" id="bVj-bL-xc5"/>
                         <outlet property="recentTableView" destination="Ffj-dv-3GF" id="8Vv-4Y-mQ2"/>
-                        <outlet property="recentTableViewHeight" destination="GWO-cd-SJ5" id="LzB-2Z-me7"/>
+                        <outlet property="recentTableViewFooterCornerView" destination="46I-0a-DYA" id="Rp7-El-7le"/>
+                        <outlet property="recentTableViewHeight" destination="odp-kF-e0Z" id="ldZ-d5-ZRs"/>
                         <outlet property="recentView" destination="d7s-A8-OLb" id="IWz-pp-zvZ"/>
                         <outlet property="searchTextField" destination="m80-Ni-P8N" id="XfO-2J-pci"/>
                         <outlet property="searchView" destination="95J-ye-IPA" id="HgG-Bi-wh4"/>

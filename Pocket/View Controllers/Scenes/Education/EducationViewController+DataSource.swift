@@ -25,14 +25,35 @@ extension EducationViewController: UICollectionViewDataSource {
 }
 extension EducationViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        if let selectedIndex = educationViewModel.selectedIndexOnCategoryCollectionView {
+            categories[selectedIndex.row].institutions.count
+        }
+        else {
+            5
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecentTableViewCell") as! RecentTableViewCell
-        cell.iconView.image = UIImage(named: categories[0].logo)
-        cell.name.text = categories[0].name
-        return cell
+            cell.iconView.layer.borderColor = UIColor.lightGray.cgColor
+            cell.iconView.set(corners: [.bottomCorners, .topCorners], radius: 5)
+            cell.iconView.clipsToBounds = true
+
+            if let selectedIndex = educationViewModel.selectedIndexOnCategoryCollectionView {
+                let selectedCategory = categories[selectedIndex.row]
+                let institution = selectedCategory.institutions[indexPath.row]
+                cell.iconView.image = UIImage(named: institution.logo)
+                cell.name.text = institution.name
+            } else {
+                let defaultCategory = categories[3]
+                let institution = defaultCategory.institutions[indexPath.row]
+                cell.iconView.image = UIImage(named: institution.logo)
+                cell.name.text = institution.name
+            }
+            
+            return cell
+        
     }
     
     

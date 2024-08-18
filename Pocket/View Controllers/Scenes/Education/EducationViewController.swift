@@ -17,6 +17,8 @@ class EducationViewController: UIViewController {
     @IBOutlet weak var institutionCategoryCollectionView: UICollectionView!
     
     
+    
+    @IBOutlet weak var recentTableViewFooterCornerView: UIView!
     @IBOutlet weak var recentView: UIView!
     
     @IBOutlet weak var recentTableView: UITableView!
@@ -37,6 +39,8 @@ class EducationViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        self.recentTableViewHeight.constant = self.recentTableView.contentSize.height
+        
     }
     
     func customizeRecentTableView(){
@@ -49,14 +53,15 @@ class EducationViewController: UIViewController {
         
        
         
-        //self.recentTableViewHeight.constant = self.recentTableView.contentSize.height
+    
     }
     
     func customizeCornerViews(){
        
         self.institutionCategoryView.set(corners: .topCorners, radius: 12)
         self.recentView.set(corners: .topCorners, radius: 12)
-        /// set the height to contentSize
+        self.recentTableViewFooterCornerView.set(corners: .bottomCorners, radius: 12)
+        
     }
 
     
