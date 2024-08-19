@@ -17,6 +17,7 @@ class EducationViewController: UIViewController {
     @IBOutlet weak var institutionCategoryCollectionView: UICollectionView!
     
     
+    @IBOutlet weak var navBar: NavBarWithBackButton!
     
     @IBOutlet weak var recentTableViewFooterCornerView: UIView!
     @IBOutlet weak var recentView: UIView!
@@ -36,11 +37,21 @@ class EducationViewController: UIViewController {
         setUpInstitutionCategoryCollectionView()
         customizeCornerViews()
         customizeRecentTableView()
+        setupNavBar()
     }
     
     override func viewDidLayoutSubviews() {
         self.recentTableViewHeight.constant = self.recentTableView.contentSize.height
         
+    }
+    
+    func setupNavBar(){
+        navBar.title = "Education"
+        navBar.leftButton.addTarget(self, action: #selector(popOutViewController(_:)), for: .touchUpInside)
+    }
+    
+    @objc func popOutViewController(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func customizeRecentTableView(){

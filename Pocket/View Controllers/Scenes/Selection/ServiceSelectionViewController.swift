@@ -20,13 +20,13 @@ class ServiceSelectionViewController: UIViewController {
     
     @IBOutlet weak var listOfServicesCollectionView: UICollectionView!
     
-    @IBOutlet weak var performSegueButton: UIButton!
     
     @IBOutlet weak var listOfServicesCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var button: UIButton!
     
     @IBOutlet weak var listOfServicesCellSuperView: UIView!
     
+    @IBOutlet weak var performSegue: DefaultGoldenButtonWithGradientAndRoundCornerRadius!
     @IBOutlet weak var bgView: UIView!
     
     @IBOutlet weak var label: UILabel!
@@ -38,6 +38,13 @@ class ServiceSelectionViewController: UIViewController {
         self.listOfServicesCollectionViewHeight.constant = 0
         self.listOfServicesCollectionView.center.y = self.view.bounds.maxY
         setUplistOfServicesCollectionView()
+    }
+    @IBAction func performSegue(_ sender: UIButton) {
+        let testVC: testViewController
+        testVC = storyboard?.instantiateViewController(withIdentifier: "testViewController") as! testViewController
+        testVC.text = "Hi there!"
+        navigationController?.pushViewController(testVC, animated: true)
+        
     }
     func setUplistOfServicesCollectionView(){
         

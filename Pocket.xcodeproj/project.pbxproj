@@ -45,6 +45,8 @@
 		7AAD58342C61E123002958AE /* transactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAD58322C61E123002958AE /* transactionsTableViewCell.swift */; };
 		7AAD58352C61E123002958AE /* transactionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AAD58332C61E123002958AE /* transactionsTableViewCell.xib */; };
 		7AAD58372C61EBD0002958AE /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAD58362C61EBD0002958AE /* Transaction.swift */; };
+		7AADB9B22C7312FC00FD3261 /* NavBarWithBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADB9B12C7312FC00FD3261 /* NavBarWithBackButton.swift */; };
+		7AADB9BA2C73147400FD3261 /* NavBarWithBackButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AADB9B92C73147400FD3261 /* NavBarWithBackButton.xib */; };
 		7AB67A8D2C68A45000865807 /* DashboardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB67A8C2C68A45000865807 /* DashboardVM.swift */; };
 		7AB67A912C68D05D00865807 /* IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB67A902C68D05D00865807 /* IBInspectable.swift */; };
 		7AC0A5B22C58E20200B6D97E /* listOfServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0A5B02C58E20200B6D97E /* listOfServicesCollectionViewCell.swift */; };
@@ -115,6 +117,8 @@
 		7AAD58322C61E123002958AE /* transactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transactionsTableViewCell.swift; sourceTree = "<group>"; };
 		7AAD58332C61E123002958AE /* transactionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = transactionsTableViewCell.xib; sourceTree = "<group>"; };
 		7AAD58362C61EBD0002958AE /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		7AADB9B12C7312FC00FD3261 /* NavBarWithBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarWithBackButton.swift; sourceTree = "<group>"; };
+		7AADB9B92C73147400FD3261 /* NavBarWithBackButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavBarWithBackButton.xib; sourceTree = "<group>"; };
 		7AB67A8C2C68A45000865807 /* DashboardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVM.swift; sourceTree = "<group>"; };
 		7AB67A902C68D05D00865807 /* IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBInspectable.swift; sourceTree = "<group>"; };
 		7AC0A5B02C58E20200B6D97E /* listOfServicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listOfServicesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -351,6 +355,15 @@
 			path = RecentTableView;
 			sourceTree = "<group>";
 		};
+		7AADB9AE2C7311EA00FD3261 /* Navigation Bar  */ = {
+			isa = PBXGroup;
+			children = (
+				7AADB9B12C7312FC00FD3261 /* NavBarWithBackButton.swift */,
+				7AADB9B92C73147400FD3261 /* NavBarWithBackButton.xib */,
+			);
+			path = "Navigation Bar ";
+			sourceTree = "<group>";
+		};
 		7AB67A882C68A42400865807 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +408,7 @@
 		7AC0A5AE2C58E1C100B6D97E /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				7AADB9AE2C7311EA00FD3261 /* Navigation Bar  */,
 				7A89A5A72C6E038700A9F83D /* Education */,
 				7A4E90742C63465300B308AD /* SideMenuTableView */,
 				7A85D1502C5A07B50041CF04 /* DashboardTableView */,
@@ -530,6 +544,7 @@
 				7A89A5AC2C6E03BE00A9F83D /* InstitutionCategoryCollectionViewCell.xib in Resources */,
 				7A4E90782C63467700B308AD /* SettingsTableViewCell.xib in Resources */,
 				7A2E2C972C576998004C6B30 /* Assets.xcassets in Resources */,
+				7AADB9BA2C73147400FD3261 /* NavBarWithBackButton.xib in Resources */,
 				7A89A5B42C6E2C5500A9F83D /* FooterTransactionTableViewCell.xib in Resources */,
 				7A85D1532C5A07E30041CF04 /* shortcutCollectionViewCell.xib in Resources */,
 				7AAD58352C61E123002958AE /* transactionsTableViewCell.xib in Resources */,
@@ -570,6 +585,7 @@
 				7A4F021F2C71BE26005E48C0 /* CustomButton.swift in Sources */,
 				7A4E907B2C63708B00B308AD /* ProfileTableViewCell.swift in Sources */,
 				7A2E2CC52C5790EB004C6B30 /* Service.swift in Sources */,
+				7AADB9B22C7312FC00FD3261 /* NavBarWithBackButton.swift in Sources */,
 				7A4E90772C63467700B308AD /* SettingsTableViewCell.swift in Sources */,
 				7A2E2CC02C576CC9004C6B30 /* DashboardVC.swift in Sources */,
 				7A89A5B02C6E267700A9F83D /* RecentTableViewCell.swift in Sources */,
