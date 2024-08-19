@@ -50,7 +50,10 @@ var categories: [Category] = [
         Institutions(name: "Chittagong University of Engineering and Technology - CUET", logo: ""),
         Institutions(name: "Bangladesh University of Engineering and Technology- BUET", logo: ""),
         Institutions(name: "Dhaka University - DU ", logo: ""),
-        Institutions(name: "Chittagong University - CU ", logo: "")
+        Institutions(name: "Chittagong University - CU ", logo: ""),
+        Institutions(name: "Noakhali Science and Technology University - NSTU ", logo: ""),
+        Institutions(name: "Chittagong University of Engineering and Technology - CUET", logo: ""),
+        Institutions(name: "Bangladesh University of Engineering and Technology- BUET", logo: ""),
     ]),
     Category(name: "Training", logo: "Training", institutions: [
         Institutions(name: "IT Training", logo: ""),

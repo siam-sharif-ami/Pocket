@@ -32,8 +32,8 @@ class DashboardVC: UIViewController {
     
     @IBOutlet weak var shortcutCollectionView: UICollectionView!
     
+    @IBOutlet weak var transactionTableViewsHeader: UIView!
     @IBOutlet weak var transactionTableViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var headerTransactionView: UIView!
     @IBOutlet weak var transactionTableView: UITableView!
     
     @IBOutlet weak var transactionFooterViewsContentView: UIView!
@@ -54,12 +54,17 @@ class DashboardVC: UIViewController {
         setUpTransactionTableView()
         setUpSideMenuTableView()
         setUpTapGestureForSideMenu()
-        headerTransactionView.set(corners: .topCorners, radius: 15)
-        transactionFooterViewsContentView.set(corners: .bottomCorners, radius: 15)
+        setupCornerViews()
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         self.transactionTableViewHeight.constant = self.transactionTableView.contentSize.height
+    }
+    
+    func setupCornerViews(){
+        transactionFooterViewsContentView.set(corners: .bottomCorners, radius: 15)
+        transactionTableViewsHeader.set(corners: .topCorners, radius: 15)
     }
     
     override func viewWillAppear(_ animated: Bool) {

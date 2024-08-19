@@ -29,8 +29,9 @@ extension EducationViewController: UITableViewDataSource {
             categories[selectedIndex.row].institutions.count
         }
         else {
-            5
+            3
         }
+        //3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,7 +52,6 @@ extension EducationViewController: UITableViewDataSource {
                 cell.iconView.image = UIImage(named: institution.logo)
                 cell.name.text = institution.name
             }
-            
             return cell
         
     }

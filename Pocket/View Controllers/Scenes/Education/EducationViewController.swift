@@ -16,10 +16,10 @@ class EducationViewController: UIViewController {
     @IBOutlet weak var viewReceiptButton: UIButton!
     @IBOutlet weak var institutionCategoryCollectionView: UICollectionView!
     
+    @IBOutlet weak var bgView: UIView!
     
     @IBOutlet weak var navBar: NavBarWithBackButton!
     
-    @IBOutlet weak var recentTableViewFooterCornerView: UIView!
     @IBOutlet weak var recentView: UIView!
     
     @IBOutlet weak var recentTableView: UITableView!
@@ -33,16 +33,22 @@ class EducationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         setUpInstitutionCategoryCollectionView()
         customizeCornerViews()
         customizeRecentTableView()
         setupNavBar()
+        self.recentTableView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
     }
     
-    override func viewDidLayoutSubviews() {
-        self.recentTableViewHeight.constant = self.recentTableView.contentSize.height
-        
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        recentTableView.layer.removeAllAnimations()
+        recentTableViewHeight.constant = recentTableView.contentSize.height
+        UIView.animate(withDuration: 0.5) {
+            self.updateViewConstraints()
+        }
+
     }
     
     func setupNavBar(){
@@ -55,6 +61,9 @@ class EducationViewController: UIViewController {
     }
     
     func customizeRecentTableView(){
+        
+        
+        
         
         self.recentTableView.dataSource = self
         self.recentTableView.delegate = self
@@ -71,8 +80,7 @@ class EducationViewController: UIViewController {
        
         self.institutionCategoryView.set(corners: .topCorners, radius: 12)
         self.recentView.set(corners: .topCorners, radius: 12)
-        self.recentTableViewFooterCornerView.set(corners: .bottomCorners, radius: 12)
-        
+        self.recentTableView.set(corners: .bottomCorners, radius: 12)
     }
 
     
