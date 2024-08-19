@@ -122,7 +122,18 @@ class DashboardVC: UIViewController {
         listOfServicesCollectionView.dataSource = self
         let nib = UINib(nibName: "listOfServicesCollectionViewCell", bundle: nil)
         listOfServicesCollectionView.register(nib, forCellWithReuseIdentifier: "listOfServicesCollectionViewCell")
+        
+        
     }
+    
+//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+//        listOfServicesCollectionView.layer.removeAllAnimations()
+//        listOfServicesCollectionViewHeight.constant = listOfServicesCollectionView.contentSize.height
+//        UIView.animate(withDuration: 0.5) {
+//            self.updateViewConstraints()
+//        }
+//
+//    }
     
     func setUpTransactionTableView(){
         transactionTableView.delegate = self
@@ -249,8 +260,7 @@ extension DashboardVC {
             self.bgView.alpha = 0.3
             print("Total height: \(self.view.bounds.height), midPoint: \(self.view.bounds.midY)")
             self.listOfServicesCollectionView.center.y = self.view.bounds.midY
-            self.listOfServicesCollectionViewHeight.constant = self.view.bounds.height / 1.75
-            
+            self.listOfServicesCollectionViewHeight.constant = self.view.bounds.height / 1.50
             
         }
     }

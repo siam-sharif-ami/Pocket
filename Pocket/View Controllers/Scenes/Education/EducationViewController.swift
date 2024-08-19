@@ -38,9 +38,26 @@ class EducationViewController: UIViewController {
         customizeCornerViews()
         customizeRecentTableView()
         setupNavBar()
+        setupTextFieldSearching()
         self.recentTableView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
     }
     
+    func setupTextFieldSearching(){
+        searchTextField.addTarget(self, action: #selector(search(_:)), for: .editingChanged)
+    }
+    
+    @objc func search(_ textField: UITextField ) {
+        if let text = textField.text {
+            educationViewModel.search(text)
+            educationViewModel.matchingInstitutions(matchingCategories: educationViewModel.matchedCategories)
+            institutionCategoryCollectionView.reloadData()
+            recentTableView.reloadData()
+        }else {
+            // default values in category collection view
+            educationViewModel.matchedCategories = categories
+            educationViewModel.matchedInstitutions = categories.flatMap{ $0.institutions }
+        }
+    }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         recentTableView.layer.removeAllAnimations()
@@ -49,6 +66,10 @@ class EducationViewController: UIViewController {
             self.updateViewConstraints()
         }
 
+    }
+    
+    deinit {
+        self.recentTableView.removeObserver(self, forKeyPath: "contentSize")
     }
     
     func setupNavBar(){
@@ -62,18 +83,11 @@ class EducationViewController: UIViewController {
     
     func customizeRecentTableView(){
         
-        
-        
-        
         self.recentTableView.dataSource = self
         self.recentTableView.delegate = self
         
-        
         recentTableView.register(UINib(nibName: "RecentTableViewCell", bundle: nil), forCellReuseIdentifier: "RecentTableViewCell")
         
-       
-        
-    
     }
     
     func customizeCornerViews(){

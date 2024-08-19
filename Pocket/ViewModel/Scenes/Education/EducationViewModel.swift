@@ -19,12 +19,17 @@ class EducationViewModel {
     }
     
     func search(_ query: String) {
-        let queryLowercased = query.lowercased()
-        self.matchedCategories = categories.compactMap { category in
-            let matchingInstitutions = category.institutions.filter { institution in
-                institution.name.lowercased().contains(queryLowercased)
+        if query != "" {
+            let queryLowercased = query.lowercased()
+            self.matchedCategories = categories.compactMap { category in
+                let matchingInstitutions = category.institutions.filter { institution in
+                    institution.name.lowercased().contains(queryLowercased)
+                }
+                return matchingInstitutions.isEmpty ? nil : Category(name: category.name, logo: category.logo, institutions: matchingInstitutions)
             }
-            return matchingInstitutions.isEmpty ? nil : Category(name: category.name, logo: category.logo, institutions: matchingInstitutions)
+        }else {
+            self.matchedCategories = categories
+            self.selectedIndexOnCategoryCollectionView = nil
         }
     }
 

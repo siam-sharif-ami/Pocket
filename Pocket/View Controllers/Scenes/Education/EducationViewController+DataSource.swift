@@ -26,10 +26,10 @@ extension EducationViewController: UICollectionViewDataSource {
 extension EducationViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let selectedIndex = educationViewModel.selectedIndexOnCategoryCollectionView {
-            categories[selectedIndex.row].institutions.count
+            educationViewModel.matchedCategories[selectedIndex.row].institutions.count
         }
         else {
-            3
+           educationViewModel.matchedInstitutions.count
         }
         //3
     }
@@ -42,13 +42,12 @@ extension EducationViewController: UITableViewDataSource {
             cell.iconView.clipsToBounds = true
 
             if let selectedIndex = educationViewModel.selectedIndexOnCategoryCollectionView {
-                let selectedCategory = categories[selectedIndex.row]
+                let selectedCategory = educationViewModel.matchedCategories[selectedIndex.row]
                 let institution = selectedCategory.institutions[indexPath.row]
                 cell.iconView.image = UIImage(named: institution.logo)
                 cell.name.text = institution.name
             } else {
-                let defaultCategory = categories[3]
-                let institution = defaultCategory.institutions[indexPath.row]
+                let institution = educationViewModel.matchedInstitutions[indexPath.row]
                 cell.iconView.image = UIImage(named: institution.logo)
                 cell.name.text = institution.name
             }
