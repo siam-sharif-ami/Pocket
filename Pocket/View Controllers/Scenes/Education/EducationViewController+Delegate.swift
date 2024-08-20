@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+
 extension EducationViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -38,11 +39,17 @@ extension EducationViewController: UICollectionViewDelegate, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // update indexPath
-        self.educationViewModel.selectedIndexOnCategoryCollectionView = indexPath
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InstitutionCategoryCollectionViewCell", for: indexPath) as! InstitutionCategoryCollectionViewCell
-        
+        if educationViewModel.selectedIndexOnCategoryCollectionView == nil {
+            self.educationViewModel.selectedIndexOnCategoryCollectionView = indexPath
+        }else if indexPath == educationViewModel.selectedIndexOnCategoryCollectionView {
+            self.educationViewModel.selectedIndexOnCategoryCollectionView = nil
+        }
+        else {
+            self.educationViewModel.selectedIndexOnCategoryCollectionView = indexPath
+        }
         print(educationViewModel.selectedIndexOnCategoryCollectionView?.row ?? -1)
         self.recentTableView.reloadData()
+        self.institutionCategoryCollectionView.reloadData()
         
     }
     

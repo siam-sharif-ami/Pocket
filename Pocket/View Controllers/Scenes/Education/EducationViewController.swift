@@ -24,10 +24,10 @@ class EducationViewController: UIViewController {
     
     @IBOutlet weak var recentTableView: UITableView!
     
+    @IBOutlet weak var institutionCategoryLabel: UILabel!
     @IBOutlet weak var recentTableViewHeight: NSLayoutConstraint!
     
-    
-    @IBOutlet weak var institutionCategoryView: UIView!
+    @IBOutlet weak var institutionCategoryCollectionViewHeight: NSLayoutConstraint!
     
     var educationViewModel = EducationViewModel()
     
@@ -40,6 +40,8 @@ class EducationViewController: UIViewController {
         setupNavBar()
         setupTextFieldSearching()
         self.recentTableView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
+        self.institutionCategoryCollectionView.addObserver(self, forKeyPath: "contentSize", context: nil)
+        
     }
     
     func setupTextFieldSearching(){
@@ -47,6 +49,7 @@ class EducationViewController: UIViewController {
     }
     
     @objc func search(_ textField: UITextField ) {
+        educationViewModel.selectedIndexOnCategoryCollectionView = nil
         if let text = textField.text {
             educationViewModel.search(text)
             educationViewModel.matchingInstitutions(matchingCategories: educationViewModel.matchedCategories)
@@ -60,7 +63,10 @@ class EducationViewController: UIViewController {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        institutionCategoryCollectionView.layer.removeAllAnimations()
         recentTableView.layer.removeAllAnimations()
+        
+        institutionCategoryCollectionViewHeight.constant = institutionCategoryCollectionView.contentSize.height
         recentTableViewHeight.constant = recentTableView.contentSize.height
         UIView.animate(withDuration: 0.5) {
             self.updateViewConstraints()
@@ -92,7 +98,6 @@ class EducationViewController: UIViewController {
     
     func customizeCornerViews(){
        
-        self.institutionCategoryView.set(corners: .topCorners, radius: 12)
         self.recentView.set(corners: .topCorners, radius: 12)
         self.recentTableView.set(corners: .bottomCorners, radius: 12)
     }

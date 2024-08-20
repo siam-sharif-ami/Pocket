@@ -17,7 +17,12 @@ extension EducationViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InstitutionCategoryCollectionViewCell", for: indexPath) as! InstitutionCategoryCollectionViewCell
         cell.categoryName.text = self.educationViewModel.matchedCategories[indexPath.row].name
         cell.icon.image = UIImage(named: self.educationViewModel.matchedCategories[indexPath.row].logo)
-//        cell.bgView.backgroundColor = .black
+        
+        if indexPath == educationViewModel.selectedIndexOnCategoryCollectionView {
+            cell.bgView.backgroundColor = Helper().gradientMidGolden
+        }else {
+            cell.bgView.backgroundColor = .white
+        }
         return cell
     }
     
@@ -28,8 +33,10 @@ extension EducationViewController: UITableViewDataSource {
         if let selectedIndex = educationViewModel.selectedIndexOnCategoryCollectionView {
             educationViewModel.matchedCategories[selectedIndex.row].institutions.count
         }
-        else {
+        else if !educationViewModel.matchedInstitutions.isEmpty {
            educationViewModel.matchedInstitutions.count
+        }else {
+            1
         }
         //3
     }
@@ -46,10 +53,14 @@ extension EducationViewController: UITableViewDataSource {
                 let institution = selectedCategory.institutions[indexPath.row]
                 cell.iconView.image = UIImage(named: institution.logo)
                 cell.name.text = institution.name
-            } else {
+            } else if !educationViewModel.matchedInstitutions.isEmpty {
                 let institution = educationViewModel.matchedInstitutions[indexPath.row]
                 cell.iconView.image = UIImage(named: institution.logo)
                 cell.name.text = institution.name
+            }else {
+                cell.iconBorderView.isHidden = true
+                cell.iconView.isHidden = true
+                cell.name.text = "No Institutions Found"
             }
             return cell
         
