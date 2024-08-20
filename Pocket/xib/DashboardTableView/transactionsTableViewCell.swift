@@ -15,8 +15,6 @@ class transactionsTableViewCell: UITableViewCell {
     @IBOutlet weak var transactionTitle: UILabel!
     @IBOutlet weak var amount: UILabel!
     
-    @IBOutlet weak var takaIcon: UIImageView!
-    @IBOutlet weak var minusOrPlus: UILabel!
     @IBOutlet weak var date: UILabel!
     
     override func awakeFromNib() {

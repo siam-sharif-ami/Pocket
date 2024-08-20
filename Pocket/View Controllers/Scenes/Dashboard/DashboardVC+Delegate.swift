@@ -18,12 +18,14 @@ extension DashboardVC: UICollectionViewDelegate {
                 animateListOfServicesCollectionView()
             }else if cell.shortcutLabel.text == "Payment" {
                 let controller: EducationViewController
-                controller = storyboard?.instantiateViewController(withIdentifier: "EducationViewController") as! EducationViewController
+                guard let controller = storyboard?.instantiateViewController(withIdentifier: "EducationViewController") as? EducationViewController
+                else { return }
                 navigationController?.pushViewController(controller, animated: true)
             }
             else {
                 let controller: testViewController
-                controller = storyboard?.instantiateViewController(withIdentifier: "testViewController") as! testViewController
+                guard let controller = storyboard?.instantiateViewController(withIdentifier: "testViewController") as? testViewController
+                else { return }
                 controller.text = cell.shortcutLabel.text ?? "Unknown"
                 controller.iconView = cell.shortcutImageView
                 navigationController?.pushViewController(controller, animated: true)

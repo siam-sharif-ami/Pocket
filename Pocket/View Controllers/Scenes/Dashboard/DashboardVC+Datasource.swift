@@ -136,13 +136,10 @@ extension DashboardVC: UITableViewDataSource {
             cell.date.text = transactionsOnTableView[indexPath.row].date
             let type = transactionsOnTableView[indexPath.row].type
             if type == "debit" {
-                cell.takaIcon.image = UIImage(named: "taka")?.withTintColor(.red)
+               
                 cell.amount.textColor = .red
-                cell.minusOrPlus.textColor = .red
             }else {
-                cell.takaIcon.image = UIImage(named: "taka")?.withTintColor(.systemGreen)
                 cell.amount.textColor = .systemGreen
-                cell.minusOrPlus.textColor = .systemGreen
             }
             return cell
             

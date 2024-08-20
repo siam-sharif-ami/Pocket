@@ -17,8 +17,8 @@ struct Transaction {
 }
 
 var transactionsOnTableView = [
-    Transaction(icon: "Type=Send Money", title: "Transfer to UCB **** 1234", amount: 10000, date: "22/04/24", type: "debit"),
-    Transaction(icon: "Type=Request Money", title: "Money added from UCB **** 2345", amount: 30000, date: "06/08/24", type: "credit"),
-    Transaction(icon: "Type=Bill Payment", title: "Make Payment to Apon Mart", amount: 690, date: "05/08/24", type: "debit"),
-    Transaction(icon: "Type=Request Money", title: "Money added from UCB **** 4567", amount: 20000, date: "06/08/24", type: "credit")
+    Transaction(icon: "Type=Send Money", title: "Transfer to UCB **** 1234 Transfer to UCB **** 1234", amount: 1000000000000, date: "22/04/24", type: "debit"),
+    Transaction(icon: "Type=Request Money", title: "Money added from UCB **** 2345 Money added from UCB **** 2345", amount: 3000000000, date: "06/08/24", type: "credit"),
+    Transaction(icon: "Type=Bill Payment", title: "Make Payment to Apon Mart Make Payment to Apon Mart", amount: 6900000, date: "05/08/24", type: "debit"),
+    Transaction(icon: "Type=Request Money", title: "Money added from UCB **** 4567 Money added from UCB **** 4567", amount: 20000, date: "06/08/24", type: "credit")
 ]
