@@ -27,4 +27,9 @@ class RecentTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func updateCell(institutionName: String, imageString: String){
+        self.name.text = institutionName
+        self.iconView.image = UIImage(named: imageString)
+    }
+    
 }

@@ -19,8 +19,8 @@ extension DashboardVC: UICollectionViewDataSource, UICollectionViewDelegateFlowL
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == self.shortcutCollectionView{
-            let cell = shortcutCollectionView.dequeueReusableCell(withReuseIdentifier: "shortcutCollectionViewCell", for: indexPath) as! shortcutCollectionViewCell
+        if collectionView == self.shortcutCollectionView {
+            guard let cell = shortcutCollectionView.dequeueReusableCell(withReuseIdentifier: "shortcutCollectionViewCell", for: indexPath) as? shortcutCollectionViewCell else { return UICollectionViewCell.init() }
             cell.shortcutImageView.image = UIImage(named: "\(servicesOnShortcut[indexPath.row].icon)")
             cell.shortcutLabel.text = servicesOnShortcut[indexPath.row].title
             cell.removeButton.isHidden = true
@@ -28,7 +28,7 @@ extension DashboardVC: UICollectionViewDataSource, UICollectionViewDelegateFlowL
         }else  {
             /// listOfServicesCollectionView
             
-            let cell = listOfServicesCollectionView.dequeueReusableCell(withReuseIdentifier: "listOfServicesCollectionViewCell", for: indexPath) as! listOfServicesCollectionViewCell
+            guard let cell = listOfServicesCollectionView.dequeueReusableCell(withReuseIdentifier: "listOfServicesCollectionViewCell", for: indexPath) as? listOfServicesCollectionViewCell else { return UICollectionViewCell.init() }
             cell.title.text = self.viewModel.servicesNotOnShortcut[indexPath.row].title
             cell.icon.image = UIImage(named: self.viewModel.servicesNotOnShortcut[indexPath.row].icon)
             return cell
@@ -100,46 +100,53 @@ extension DashboardVC: UITableViewDataSource {
         case self.sideMenuTableView:
             
             if indexPath.section == 0 {
-                let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
+                
+                guard let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as? ProfileTableViewCell else { return UITableViewCell.init() }
                 let sectionData = sideMenuSections[indexPath.section][""]!
                 cell.profileIcon.image = UIImage(named: sectionData[indexPath.row].icon)
                 cell.profileName.text = sectionData[indexPath.row].Title
                 return cell
+                
             }else if indexPath.section == 1 {
-                let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as! SettingsTableViewCell
+                
+                guard let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as? SettingsTableViewCell else { return UITableViewCell.init() }
                 let sectionData = sideMenuSections[indexPath.section]["Settings"]!
                 cell.icon.image = UIImage(named: sectionData[indexPath.row].icon)
                 cell.title.text = sectionData[indexPath.row].Title
                 return cell
+                
             }else if indexPath.section == 2 {
-                let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as! SettingsTableViewCell
+                
+                guard let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as? SettingsTableViewCell else { return UITableViewCell.init() }
                 let sectionData = sideMenuSections[indexPath.section]["Account Service"]!
                 cell.icon.image = UIImage(named: sectionData[indexPath.row].icon)
                 cell.title.text = sectionData[indexPath.row].Title
                 return cell
+                
             }
             else {
-                let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as! SettingsTableViewCell
+                
+                guard let cell = sideMenuTableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as? SettingsTableViewCell else { return UITableViewCell.init() }
                 let sectionData = sideMenuSections[indexPath.section]["Support"]!
                 cell.icon.image = UIImage(named: sectionData[indexPath.row].icon)
                 cell.title.text = sectionData[indexPath.row].Title
                 return cell
+                
             }
             
         case self.transactionTableView:
-            let cell = transactionTableView.dequeueReusableCell(withIdentifier: "transactionsTableViewCell",  for: indexPath) as! transactionsTableViewCell
+            
+            guard let cell = transactionTableView.dequeueReusableCell(withIdentifier: "transactionsTableViewCell",  for: indexPath) as? transactionsTableViewCell else { return UITableViewCell.init() }
+            
             cell.icon.image = UIImage(named: transactionsOnTableView[indexPath.row].icon)
             cell.transactionTitle.text = transactionsOnTableView[indexPath.row].title
             cell.transactionTitle.numberOfLines = 0
-            cell.amount.text = transactionsOnTableView[indexPath.row].amount.description
-            
+            cell.amount.attributedText = Helper().getAmountWithIcon(amount: transactionsOnTableView[indexPath.row].amount.description, isType: transactionsOnTableView[indexPath.row].type)
             cell.date.text = transactionsOnTableView[indexPath.row].date
-            let type = transactionsOnTableView[indexPath.row].type
-            if type == "debit" {
-               
-                cell.amount.textColor = .red
-            }else {
+            if transactionsOnTableView[indexPath.row].type == "credit" {
                 cell.amount.textColor = .systemGreen
+            }else {
+                cell.amount.textColor = .systemRed
             }
             return cell
             
@@ -151,6 +158,7 @@ extension DashboardVC: UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
         switch(tableView){
         case self.sideMenuTableView:
             switch(section){

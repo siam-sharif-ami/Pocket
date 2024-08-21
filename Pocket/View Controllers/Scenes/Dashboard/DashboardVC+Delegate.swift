@@ -13,17 +13,15 @@ extension DashboardVC: UICollectionViewDelegate {
         if collectionView == self.shortcutCollectionView {
             
             self.viewModel.selectedShortcutIndex = indexPath
-            let cell = shortcutCollectionView.cellForItem(at: indexPath) as! shortcutCollectionViewCell
+            guard let cell = shortcutCollectionView.cellForItem(at: indexPath) as? shortcutCollectionViewCell else { return }
             if cell.removeButton.isHidden == true  && cell.shortcutLabel.text == "Shortcut" {
                 animateListOfServicesCollectionView()
             }else if cell.shortcutLabel.text == "Payment" {
-                let controller: EducationViewController
                 guard let controller = storyboard?.instantiateViewController(withIdentifier: "EducationViewController") as? EducationViewController
                 else { return }
                 navigationController?.pushViewController(controller, animated: true)
             }
             else {
-                let controller: testViewController
                 guard let controller = storyboard?.instantiateViewController(withIdentifier: "testViewController") as? testViewController
                 else { return }
                 controller.text = cell.shortcutLabel.text ?? "Unknown"

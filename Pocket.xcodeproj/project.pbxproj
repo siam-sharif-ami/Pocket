@@ -56,6 +56,7 @@
 		7AC6B2902C5F9A0E0089620A /* DashboardVC+Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6B28F2C5F9A0E0089620A /* DashboardVC+Datasource.swift */; };
 		7AC6B2922C5F9A1D0089620A /* DashboardVC+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6B2912C5F9A1D0089620A /* DashboardVC+Delegate.swift */; };
 		7AC76FED2C69E1FA00DDC888 /* CACornerMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC76FEC2C69E1FA00DDC888 /* CACornerMask.swift */; };
+		B5EE5AC82C75D7FF00664847 /* ServiceEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE5AC72C75D7FF00664847 /* ServiceEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		7AC6B28F2C5F9A0E0089620A /* DashboardVC+Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardVC+Datasource.swift"; sourceTree = "<group>"; };
 		7AC6B2912C5F9A1D0089620A /* DashboardVC+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardVC+Delegate.swift"; sourceTree = "<group>"; };
 		7AC76FEC2C69E1FA00DDC888 /* CACornerMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACornerMask.swift; sourceTree = "<group>"; };
+		B5EE5AC72C75D7FF00664847 /* ServiceEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 		7A4F021D2C71BE13005E48C0 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				B5EE5AC62C75D7E500664847 /* Enum */,
 				7A4F021E2C71BE26005E48C0 /* CustomButton.swift */,
 				7A4F02222C71C051005E48C0 /* Helper.swift */,
 				7A4F02242C71C20D005E48C0 /* DeviceVariants.swift */,
@@ -447,6 +450,14 @@
 			path = Selection;
 			sourceTree = "<group>";
 		};
+		B5EE5AC62C75D7E500664847 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				B5EE5AC72C75D7FF00664847 /* ServiceEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -590,6 +601,7 @@
 			files = (
 				7AB67A912C68D05D00865807 /* IBInspectable.swift in Sources */,
 				7A4F02252C71C20D005E48C0 /* DeviceVariants.swift in Sources */,
+				B5EE5AC82C75D7FF00664847 /* ServiceEnum.swift in Sources */,
 				7A2E2C922C576997004C6B30 /* ViewController.swift in Sources */,
 				7AAD58372C61EBD0002958AE /* Transaction.swift in Sources */,
 				7AC6B2922C5F9A1D0089620A /* DashboardVC+Delegate.swift in Sources */,

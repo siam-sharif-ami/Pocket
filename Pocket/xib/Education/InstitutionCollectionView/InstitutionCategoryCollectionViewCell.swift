@@ -18,5 +18,11 @@ class InstitutionCategoryCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func updateCell(categoryLabel: String, imageString: String, selectedColor: UIColor){
+        self.categoryName.text = categoryLabel
+        self.icon.image = UIImage(named: imageString)
+        self.bgView.backgroundColor = selectedColor
+    }
 
 }

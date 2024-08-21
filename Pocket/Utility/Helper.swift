@@ -35,4 +35,47 @@ public class Helper: NSObject {
             alpha: CGFloat(1.0)
         )
     }
+    
+    public func getAmountWithIcon(amount: String, isType: String) -> NSAttributedString {
+            let completeText = NSMutableAttributedString()
+            let imageAttachment = NSTextAttachment()
+            let width = getContentHeightWithRespectToDevice(contentHeight: 9)
+            let height = getContentHeightWithRespectToDevice(contentHeight: 13)
+            imageAttachment.bounds = CGRect(x: 0, y: 0, width: width, height: height)
+            
+            if isType == "credit" {
+                completeText.append(NSAttributedString(string: "+"))
+                imageAttachment.image = UIImage(named: "green_taka_icon")
+            } else {
+                completeText.append(NSAttributedString(string: "-"))
+                imageAttachment.image = UIImage(named: "red_taka_icon")
+            }
+            
+            let attachmentString = NSAttributedString(attachment: imageAttachment)
+            completeText.append(attachmentString)
+        let textAfterIcon = NSAttributedString(string: " " + amount.withComma())
+                completeText.append(textAfterIcon)
+            
+               return completeText
+           }
+    
+}
+
+public extension String {
+    func withComma() -> String {
+        var val = ""
+        for item in self {
+            if item != ","{
+                val.append(item)
+            }
+        }
+        let numberFormatter = NumberFormatter()
+        numberFormatter.usesGroupingSeparator = true
+        numberFormatter.groupingSize = 3
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.locale = Locale(identifier: "en_US")
+        numberFormatter.maximumFractionDigits = 2
+        numberFormatter.minimumFractionDigits = 2
+        return numberFormatter.string(from: NSNumber(value: Double(val) ?? 0.00))!
+    }
 }

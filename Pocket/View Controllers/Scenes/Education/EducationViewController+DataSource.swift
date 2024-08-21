@@ -14,14 +14,12 @@ extension EducationViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InstitutionCategoryCollectionViewCell", for: indexPath) as! InstitutionCategoryCollectionViewCell
-        cell.categoryName.text = self.educationViewModel.matchedCategories[indexPath.row].name
-        cell.icon.image = UIImage(named: self.educationViewModel.matchedCategories[indexPath.row].logo)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InstitutionCategoryCollectionViewCell", for: indexPath) as? InstitutionCategoryCollectionViewCell else { return UICollectionViewCell.init() }
         
         if indexPath == educationViewModel.selectedIndexOnCategoryCollectionView {
-            cell.bgView.backgroundColor = Helper().gradientMidGolden
+            cell.updateCell(categoryLabel: educationViewModel.matchedCategories[indexPath.row].name, imageString: educationViewModel.matchedCategories[indexPath.row].logo, selectedColor: Helper().gradientMidGolden)
         }else {
-            cell.bgView.backgroundColor = .white
+            cell.updateCell(categoryLabel: educationViewModel.matchedCategories[indexPath.row].name, imageString: educationViewModel.matchedCategories[indexPath.row].logo, selectedColor: .white)
         }
         return cell
     }
@@ -43,7 +41,7 @@ extension EducationViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecentTableViewCell") as! RecentTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecentTableViewCell") as? RecentTableViewCell else { return UITableViewCell.init() }
             cell.iconView.layer.borderColor = UIColor.lightGray.cgColor
             cell.iconView.set(corners: [.bottomCorners, .topCorners], radius: 5)
             cell.iconView.clipsToBounds = true
@@ -51,19 +49,16 @@ extension EducationViewController: UITableViewDataSource {
             if let selectedIndex = educationViewModel.selectedIndexOnCategoryCollectionView {
                 let selectedCategory = educationViewModel.matchedCategories[selectedIndex.row]
                 let institution = selectedCategory.institutions[indexPath.row]
-                cell.iconView.image = UIImage(named: institution.logo)
-                cell.name.text = institution.name
+                cell.updateCell(institutionName: institution.name, imageString: institution.logo)
             } else if !educationViewModel.matchedInstitutions.isEmpty {
                 let institution = educationViewModel.matchedInstitutions[indexPath.row]
-                cell.iconView.image = UIImage(named: institution.logo)
-                cell.name.text = institution.name
+                cell.updateCell(institutionName: institution.name, imageString: institution.logo)
             }else {
                 cell.iconBorderView.isHidden = true
                 cell.iconView.isHidden = true
                 cell.name.text = "No Institutions Found"
             }
             return cell
-        
     }
     
     
