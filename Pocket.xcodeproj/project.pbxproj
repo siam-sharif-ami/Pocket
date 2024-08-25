@@ -56,6 +56,7 @@
 		7AC6B2902C5F9A0E0089620A /* DashboardVC+Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6B28F2C5F9A0E0089620A /* DashboardVC+Datasource.swift */; };
 		7AC6B2922C5F9A1D0089620A /* DashboardVC+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6B2912C5F9A1D0089620A /* DashboardVC+Delegate.swift */; };
 		7AC76FED2C69E1FA00DDC888 /* CACornerMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC76FEC2C69E1FA00DDC888 /* CACornerMask.swift */; };
+		B56A42D22C7B2CEA00979E21 /* CustomGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56A42D12C7B2CEA00979E21 /* CustomGradientView.swift */; };
 		B5EE5AC82C75D7FF00664847 /* ServiceEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE5AC72C75D7FF00664847 /* ServiceEnum.swift */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +131,7 @@
 		7AC6B28F2C5F9A0E0089620A /* DashboardVC+Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardVC+Datasource.swift"; sourceTree = "<group>"; };
 		7AC6B2912C5F9A1D0089620A /* DashboardVC+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardVC+Delegate.swift"; sourceTree = "<group>"; };
 		7AC76FEC2C69E1FA00DDC888 /* CACornerMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACornerMask.swift; sourceTree = "<group>"; };
+		B56A42D12C7B2CEA00979E21 /* CustomGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGradientView.swift; sourceTree = "<group>"; };
 		B5EE5AC72C75D7FF00664847 /* ServiceEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -270,6 +272,7 @@
 		7A4F021D2C71BE13005E48C0 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				B56A42D02C7B2CDD00979E21 /* Common Class */,
 				B5EE5AC62C75D7E500664847 /* Enum */,
 				7A4F021E2C71BE26005E48C0 /* CustomButton.swift */,
 				7A4F02222C71C051005E48C0 /* Helper.swift */,
@@ -450,6 +453,14 @@
 			path = Selection;
 			sourceTree = "<group>";
 		};
+		B56A42D02C7B2CDD00979E21 /* Common Class */ = {
+			isa = PBXGroup;
+			children = (
+				B56A42D12C7B2CEA00979E21 /* CustomGradientView.swift */,
+			);
+			path = "Common Class";
+			sourceTree = "<group>";
+		};
 		B5EE5AC62C75D7E500664847 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
@@ -599,6 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B56A42D22C7B2CEA00979E21 /* CustomGradientView.swift in Sources */,
 				7AB67A912C68D05D00865807 /* IBInspectable.swift in Sources */,
 				7A4F02252C71C20D005E48C0 /* DeviceVariants.swift in Sources */,
 				B5EE5AC82C75D7FF00664847 /* ServiceEnum.swift in Sources */,

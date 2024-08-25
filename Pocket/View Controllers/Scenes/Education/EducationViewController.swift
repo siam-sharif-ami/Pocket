@@ -39,9 +39,24 @@ class EducationViewController: UIViewController {
         customizeRecentTableView()
         setupNavBar()
         setupTextFieldSearching()
+        setupBottomGradient()
         self.recentTableView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
         self.institutionCategoryCollectionView.addObserver(self, forKeyPath: "contentSize", context: nil)
         
+    }
+    
+    func setupBottomGradient(){
+        let bottomView = CustomGradientView()
+        bottomView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bottomView)
+        
+        let heightConstraint = getContentHeightWithRespectToDevice(contentHeight: 65)
+        NSLayoutConstraint.activate([
+            bottomView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            bottomView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            bottomView.bottomAnchor.constraint(equalTo: view.bottomAnchor ),
+            bottomView.heightAnchor.constraint(equalToConstant: heightConstraint)
+        ])
     }
     
     func setupTextFieldSearching(){

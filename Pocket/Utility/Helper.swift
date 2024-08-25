@@ -12,6 +12,7 @@ public class Helper: NSObject {
     public lazy var gradientLightGolden: UIColor = hexStringToUIColor(hex: "#F5F1AF")
     public lazy var gradientMidGolden: UIColor = hexStringToUIColor(hex: "#DCC685")
     public lazy var gradientDarkGolden: UIColor = hexStringToUIColor(hex: "#C49F5E")
+    public lazy var bottomViewColor: UIColor = hexStringToUIColor(hex: "#F3F3F3")
     public lazy var buttonTextColor:UIColor = hexStringToUIColor(hex: "#000000").withAlphaComponent(0.7)
     
     public func hexStringToUIColor (hex: String) -> UIColor {
